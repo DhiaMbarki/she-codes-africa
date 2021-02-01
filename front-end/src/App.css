@@ -1,0 +1,22 @@
+img {
+    border-radius: 50%;
+    float: left;
+  }
+.colum1{
+  float: left;
+
+}
+#labelname{
+
+padding-left: 100px;
+
+}
+#fname, #lname{
+  margin-left: 30px;
+}
+
+
+.aboutme{
+  margin-left: 300px;
+}
+ 

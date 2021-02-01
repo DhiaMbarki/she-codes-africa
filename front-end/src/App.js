@@ -1,5 +1,5 @@
 import './App.css';
- import Viewprofile from "./component /Viewprofile";
+ import Viewprofile from "./components/profile/viewProfile";
 function App() {
   return (
     <div >
