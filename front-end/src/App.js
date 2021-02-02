@@ -1,13 +1,24 @@
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+//IMPORTING ALL THE COMPONENTS 
 import Events from './components/events/events';
 
+import './App.css';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-        <h1>welcome</h1>
-        <Events />
+        
+    <Switch>
+    {/* <Route exact path="/" component={Homepage} />
+    <Route exact path="/Homepage" component={Homepage} /> */}
+    <Route exact path="/Events" component={Events} />
+     
+    </Switch>
     </div>
+    </BrowserRouter>
   );
 }
 

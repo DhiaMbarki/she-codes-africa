@@ -13,7 +13,7 @@ import FakeEvents from './fakeEvents'
             <div key={index}> 
             <h3>{event.Title}</h3>
             <h4>{event.Status}</h4>
-            <p>{event.Image}</p>
+            <p>{event.About}</p>
             </div>
         ))
         return (
