@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Card from "react-bootstrap/Card"
 import FakeEvents from './fakeEvents'
 
  class Events extends Component {
@@ -10,11 +11,16 @@ import FakeEvents from './fakeEvents'
     }
     render() {
         const eventItems = this.state.FakeEvents.map((event,index) => (
-            <div key={index}> 
-            <h3>{event.Title}</h3>
-            <h4>{event.Status}</h4>
-            <p>{event.About}</p>
-            </div>
+            <Card style={{ width: '18rem' }}>
+            {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
+            <Card.Body>
+              <Card.Title>{event.Title}</Card.Title>
+              <Card.Text>{event.Status}</Card.Text>
+              <Card.Text>{event.About}</Card.Text>
+              <Card.Link href="#">Read More</Card.Link>
+              <hr />
+            </Card.Body>
+          </Card>
         ))
         return (
             <div>
@@ -25,3 +31,4 @@ import FakeEvents from './fakeEvents'
     }
 }
 export default Events;
+
