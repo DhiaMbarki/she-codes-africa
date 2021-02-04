@@ -1,19 +1,21 @@
-const initState = {user:null}
+const initState = { user: null };
 
 const authReducer = (state = initState, action) => {
-    switch (action.type) {
-        case 'SIGN_UP':
-            return (
-                {
-                    ...state,
-                    user:action.payload
-                }
-            )
-    
-        default:
-            
-            return state
-    }
+  switch (action.type) {
+    case "SIGN_UP":
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case "SIGN_OUT":
+      return {
+        ...state,
+        user: null,
+      };
+
+    default:
+      return state;
+  }
 };
 
-export default authReducer; 
+export default authReducer;
