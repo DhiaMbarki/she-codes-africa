@@ -9,6 +9,8 @@ import { createStore } from "redux";
 import rootReducer from "./redux/reducers/root_Reducer";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import './firebase/config'
+
 
 const store = createStore(rootReducer, {}, composeWithDevTools());
 
