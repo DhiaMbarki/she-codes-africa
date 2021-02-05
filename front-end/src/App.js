@@ -7,7 +7,7 @@ import Home from './components/pages/home';
 import Donate from './components/pages/donate'
 import About from './components/pages/about'
 import SignIn from './components/pages/signin'
-import SignUp from './components/pages/signup'
+import SignUp from './components/pages/SignUp'
 import NavigationBar from './components/pages/navigation'
 import Logout from './components/pages/logout'
 import Events from "./components/events/events";
@@ -28,8 +28,8 @@ class App extends React.Component {
            <Route exact path = '/' component = {Home} />
            <Route path = '/donate' component = {Donate} />
            <Route path = '/about'  component = {About} />
-           <Route path = '/signIn' component = {SignIn} />
-           <Route path = '/signUp' component = {SignUp} />
+           <Route path = '/SignIn' component = {SignIn} />
+           <Route path = '/SignUp' component = {SignUp} />
            <Route path = '/logout' component = {Logout} />
            <Route exact path="/events" component={Events} />
          </Switch>
