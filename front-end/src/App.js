@@ -9,6 +9,9 @@ import SignUp from './components/signup'
 import NavigationBar from './components/navigation'
 import Logout from './components/logout'
 
+import Blogs from './components/blogs'
+import UpcomingEvents from './components/upcomingEvents'
+
 
 class App extends React.Component {
   constructor() {
@@ -29,6 +32,9 @@ class App extends React.Component {
            <Route path = '/signIn' component = {SignIn} />
            <Route path = '/signUp' component = {SignUp} />
            <Route path = '/logout' component = {Logout} />
+
+           <Route path = '/blogs' component = {Blogs} />
+           <Route path = '/upcomingEvents' component = {UpcomingEvents} />
 
          </Switch>
        </div>

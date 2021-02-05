@@ -1,5 +1,4 @@
 const initState = { user: null };
-
 const authReducer = (state = initState, action) => {
   switch (action.type) {
     case "SIGN_UP":

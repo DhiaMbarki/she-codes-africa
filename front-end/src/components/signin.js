@@ -31,4 +31,4 @@ const mapStateToProps = state => ({
   user : state.auth.user
 })
 
-export default connect(mapStateToProps ,{ signInAction }) (SignIn);
+export default connect(mapStateToProps ,{signInAction}) (SignIn);
