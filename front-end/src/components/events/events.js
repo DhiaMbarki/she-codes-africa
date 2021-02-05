@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Card from "react-bootstrap/Card"
 import FakeEvents from './fakeEvents'
+import { useHistory } from "react-router-dom";
 
  class Events extends Component {
     constructor(propos){
@@ -9,6 +10,10 @@ import FakeEvents from './fakeEvents'
         FakeEvents :FakeEvents
     }
     }
+//  history = useHistory();
+//  displayEvent = () => history.push("/displayEvent");
+
+
     render() {
         const eventItems = this.state.FakeEvents.map((event,index) => (
             <Card style={{ width: '18rem' }}>
