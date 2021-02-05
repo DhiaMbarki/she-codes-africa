@@ -11,8 +11,11 @@ img {
 padding-left: 100px;
 
 }
-#fname, #lname{
+#clearevent{
   margin-left: 30px;
+}
+#lable, #name{
+  margin-left: 90px;
 }
 
 

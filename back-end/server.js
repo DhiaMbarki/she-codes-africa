@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv').config()
-
+const {db} = require("./models/indexdb")
 const app = express();
 
 
@@ -19,28 +19,17 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ limit: '50mb',extended: true }));
 
 
-////////
 
-const db = require("./models");
-db.sequelize.sync()
-.then(() => {
-  console.log("Database connected !")
-})
-.catch(() => {
-  console.log("error while connection to db")
-})
 
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
-////
+//setup connection to database
+db.authenticate()
+  .then(() => console.log("Connection has been established successfully."))
+  .catch((err) => console.log("Unable to connect to the database:" + err));
 
 // simple route for testing
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to 'she codes africa' application. this is a GET route for test" });
 });
-////We also need to include routes in server.js (right before app.listen()):
-require("./routes/members.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

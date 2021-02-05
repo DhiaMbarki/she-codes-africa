@@ -1,11 +1,16 @@
-module.exports = (sequelize, Sequelize) => {
-  const members = sequelize.define("members", {
-    col1: { type: Sequelize.STRING },
-    col2: { type: Sequelize.STRING },
+const Sequelize = require('sequelize');
+const { db } = require('../database-mysql/indexdb');
+
+const Memberstables = db.define("members", {
+   { type: Sequelize.STRING },
+   { type: Sequelize.STRING },
     //////
     //////
     //////
   });
 
-  return members;
 };
+Memberstables.sync().then(() => {
+  console.log('MyUnsplashDB_Image_table_register created');
+
+  module.exports=Memberstables
