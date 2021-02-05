@@ -1,6 +1,6 @@
 // sign in .js
 import Button from "react-bootstrap/Button";
-import { signOutAction } from "../components/store/actions/authAction";
+import { signOutAction } from "../../redux/actions/authAction";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import React from "react";
