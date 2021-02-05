@@ -1,5 +1,5 @@
 import React from 'react';
-import Event from '../events/events.js';
+
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
@@ -27,7 +27,7 @@ return (
                 <a href="https://www.w3schools.com">
                     <img alt="W3Schools" src="https://image.flaticon.com/icons/png/512/8/8800.png" width="50" height="50"></img></a>
             </div><br></br><br></br>
-            <Event /> <br></br>
+      <hr />
             <Button colorScheme="teal" size="md" onClick={handleClick}>Edit profile</Button>
             <Button id="clearevent" colorScheme="teal" size="md">Clear event</Button>
         </div>

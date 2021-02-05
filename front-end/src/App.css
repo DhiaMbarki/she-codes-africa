@@ -4,8 +4,13 @@ img {
   }
 .colum1{
   float: left;
-
 }
+.App {
+  width: 90%;
+  margin: auto;
+}
+
+
 #labelname{
 
 padding-left: 100px;
