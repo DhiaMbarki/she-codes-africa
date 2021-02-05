@@ -1,8 +1,6 @@
 import React from 'react'
 import { Button, Nav, Navbar, NavDropdown, NavItem } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap'
-import { MenuItem } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 
@@ -36,6 +34,16 @@ class NavigationBar extends React.Component {
     
     {user ? (
 
+      <Nav>
+
+     <LinkContainer to="/blogs">
+     <Nav.Link >Blogs</Nav.Link>
+     </LinkContainer>
+     <LinkContainer to="/upcomingEvents">
+     <Nav.Link >Upcoming events</Nav.Link>
+     </LinkContainer> 
+
+
      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
      <LinkContainer to="/">
      <NavDropdown.Item >View profile</NavDropdown.Item>
@@ -52,7 +60,15 @@ class NavigationBar extends React.Component {
      <LinkContainer to="/logout">
      <NavDropdown.Item >Logout</NavDropdown.Item>
      </LinkContainer>
-     </NavDropdown> ) 
+     </NavDropdown>
+
+     
+
+     </Nav>
+   
+     )
+
+     
      : 
      (
       <>
@@ -78,5 +94,5 @@ const mapStateToProps = (state) => ({
   user : state.auth.user
 })
 
-export default connect(mapStateToProps)( NavigationBar)
+export default connect(mapStateToProps)(NavigationBar)
 

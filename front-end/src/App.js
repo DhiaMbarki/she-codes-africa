@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-
 //IMPORTING ALL THE COMPONENTS
 import Home from './components/pages/home';
 import Donate from './components/pages/donate'
@@ -11,6 +10,7 @@ import SignUp from './components/pages/signup'
 import NavigationBar from './components/pages/navigation'
 import Logout from './components/pages/logout'
 import Events from "./components/events/events";
+import BlogsCard from './components/blogs/displayBlog'
 
 import "./App.css";
 
@@ -32,6 +32,9 @@ class App extends React.Component {
            <Route path = '/signUp' component = {SignUp} />
            <Route path = '/logout' component = {Logout} />
            <Route exact path="/events" component={Events} />
+
+           <Route exact path="/blogs" component={BlogsCard} />
+           
          </Switch>
        </div>
      </Router>
