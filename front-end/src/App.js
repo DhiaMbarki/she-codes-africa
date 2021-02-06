@@ -9,11 +9,10 @@ import Donate from './components/pages/donate'
 import About from './components/pages/about'
 
 import NavigationBar from './components/pages/navigation'
-import Logout from './components/pages/logout'
+import logout from './components/pages/logout'
 import Events from "./components/events/events";
 
 import React, { FC, useEffect } from 'react';
-
 import SignIn from './components/pages/SignIn'
 import SignUp from './components/pages/SignUp'
 
@@ -93,10 +92,9 @@ const App: FC = () => {
     
     <BrowserRouter>
     <NavigationBar/>
+    <Header/>
       <Switch>
-      <Header />
-      
-      
+
         <PublicRoute path="/signup" component={SignUp} exact />
         <PublicRoute path="/signin" component={SignIn} exact />
         <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
