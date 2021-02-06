@@ -14,6 +14,7 @@ class NavigationBar extends React.Component {
 
   render() {
     const user = this.props.user
+    console.log(user)
     return (
   
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -27,7 +28,7 @@ class NavigationBar extends React.Component {
     <LinkContainer to="/about">
       <Nav.Link >About</Nav.Link>
     </LinkContainer>
-
+ 
     <LinkContainer to="/donate">
       <Nav.Link >Donate</Nav.Link>
     </LinkContainer>
@@ -36,14 +37,15 @@ class NavigationBar extends React.Component {
 
       <Nav>
 
-     <LinkContainer to="/blogs">
+
+     <LinkContainer to={{
+    pathname: "/blogs",
+  }}>
      <Nav.Link >Blogs</Nav.Link>
      </LinkContainer>
      <LinkContainer to="/upcomingEvents">
      <Nav.Link >Upcoming events</Nav.Link>
      </LinkContainer> 
-
-
      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
      <LinkContainer to="/">
      <NavDropdown.Item >View profile</NavDropdown.Item>
