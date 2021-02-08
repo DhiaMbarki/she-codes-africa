@@ -68,6 +68,7 @@
 }
 .option-input.radio {
   border-radius: 50%;
+  
 }
 .option-input.radio::after {
   border-radius: 50%;
