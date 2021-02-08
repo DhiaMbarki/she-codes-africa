@@ -10,7 +10,7 @@ const Input = styled.input`
   outline: none;
   background: transparent;
   border: 1px solid #819efc;
-  color: #fff;
+
   height: 40px;
   user-select: none;
 `;
@@ -19,7 +19,7 @@ const Button = styled.span`
   display: inline-block;
   width: 30px;
   line-height: 38px;
-  color: #fff;
+  
   height: 40px;
   text-align: center;
   font-weight: bold;

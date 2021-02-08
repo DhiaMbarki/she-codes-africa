@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import styled from "@emotion/styled";
 import axios from "axios";
@@ -25,13 +25,15 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   const stripe = useStripe();
   const elements = useElements();
+  useEffect(() => {
+    console.log(stripe)
+  }, []);
 
-
-  const handleCardDetailsChange = ev => {
+  const handleCardDetailsChange = (ev) => {
     ev.error ? setCheckoutError(ev.error.message) : setCheckoutError();
   };
 
-  const handleFormSubmit = async ev => {
+  const handleFormSubmit = async (ev) => {
     ev.preventDefault();
 
     const billingDetails = {
@@ -39,8 +41,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       email: ev.target.email.value,
       address: {
         city: ev.target.city.value,
-        
-      }
+      },
     };
 
     setProcessingTo(true);
@@ -49,13 +50,13 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
     try {
       const { data: clientSecret } = await axios.post("/api/payment_intents", {
-        amount: price * 100
+        amount: price * 100,
       });
 
       const paymentMethodReq = await stripe.createPaymentMethod({
         type: "card",
         card: cardElement,
-        billing_details: billingDetails
+        billing_details: billingDetails,
       });
 
       if (paymentMethodReq.error) {
@@ -65,7 +66,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       }
 
       const { error } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: paymentMethodReq.paymentMethod.id
+        payment_method: paymentMethodReq.paymentMethod.id,
       });
 
       if (error) {
@@ -82,26 +83,26 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   const iframeStyles = {
     base: {
-      color: "#fff",
+      color: "#212121",
       fontSize: "16px",
-      iconColor: "#fff",
+      iconColor: "#212121",
       "::placeholder": {
-        color: "#87bbfd"
-      }
+        color: "#87bbfd",
+      },
     },
     invalid: {
       iconColor: "#FFC7EE",
-      color: "#FFC7EE"
+      color: "#FFC7EE",
     },
     complete: {
-      iconColor: "#cbf4c9"
-    }
+      iconColor: "#cbf4c9",
+    },
   };
 
   const cardElementOpts = {
     iconStyle: "solid",
     style: iframeStyles,
-    hidePostalCode: true
+    hidePostalCode: true,
   };
 
   return (
