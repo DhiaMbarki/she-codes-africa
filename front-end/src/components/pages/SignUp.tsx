@@ -72,11 +72,11 @@ const SignUp: FC = () => {
 
 <div>
   <label>
-    <input type="radio" class="option-input radio" name="example" checked />
+    <input type="radio" className="option-input radio" name="example" checked />
     as Company
   </label>
   <label>
-    <input type="radio" class="option-input radio" name="example" />
+    <input type="radio" className="option-input radio" name="example" />
     as User
   </label>
   
