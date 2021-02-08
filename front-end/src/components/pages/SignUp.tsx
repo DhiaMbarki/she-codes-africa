@@ -12,6 +12,7 @@ import Button from '../UI/Button';
 import Message from '../UI/Message';
 import { signup, setError } from '../../store/actions/authActions';
 import { RootState } from '../../store';
+import './SignUp.css'
 
 const SignUp: FC = () => {
   const [firstName, setFirstName] = useState('');
@@ -67,9 +68,29 @@ const SignUp: FC = () => {
             placeholder="Password"
             label="Password"
           />
+
+
+<div>
+  <label>
+    <input type="radio" class="option-input radio" name="example" checked />
+    as Company
+  </label>
+  <label>
+    <input type="radio" class="option-input radio" name="example" />
+    as User
+  </label>
+  
+</div>
+
+
+
+
+
+      
           <Button text={loading ? "Loading..." : "Sign Up"} className="is-primary is-fullwidth mt-5" disabled={loading} />
         </form>
       </div>
+      
     </section>
   );
 }
