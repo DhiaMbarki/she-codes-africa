@@ -41,7 +41,7 @@ class App extends React.Component {
             <Route path="/logout" component={Logout} />
             <Route path="/events" component={Events} />
 
-            <Route path="/blogs" component={Blogs} />
+            <Route exact path="/blogs" component={Blogs} />
             <Route path="/blogs/:id" children={<BlogDetails />} />
           </Switch>
         </div>
