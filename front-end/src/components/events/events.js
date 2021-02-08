@@ -1,41 +1,17 @@
-import React, { Component } from 'react'
-import Card from "react-bootstrap/Card"
-import FakeEvents from './fakeEvents'
-import { useHistory } from "react-router-dom";
-
-
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-// import CameraIcon from '@material-ui/icons/PhotoCamera';
+import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
-import { ListGroup, ListGroupItem } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Redirect, Link } from "react-router-dom";
-
-//////
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
-import {
-  MDBRow,
-  MDBView,
-  MDBMask,
-  MDBCardBody,
-  MDBCard,
-  MDBCol,
-  MDBBtn,
-} from "mdbreact";
-/////
-// import BlogDetails from './blogDetail'
+import FakeEvents from "../events/fakeEvents";
 
 function Copyright() {
   return (
@@ -117,55 +93,33 @@ export default function Events() {
               contents, the creator, etc. Make it short and sweet, but not too
               short so folks don&apos;t simply skip over it entirely.
             </Typography>
-            <div className={classes.heroButtons}></div>
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {FakeEvents.map((card) => (
-              <Grid item key={card.author}>
-                <MDBCard className="my-5 px-5 pb-5">
-                  <MDBCardBody>
-                    <MDBRow>
-                      <MDBCol lg="5" xl="4">
-                        <MDBView
-                          hover
-                          className="rounded z-depth-1-half mb-lg-0 mb-4"
-                        >
-                          <img className="img-fluid" src={card.img} alt="" />
-                          <a href="#!">
-                            <MDBMask overlay="white-slight" />
-                          </a>
-                        </MDBView>
-                      </MDBCol>
-                      <MDBCol lg="7" xl="8">
-                        <h3 className="font-weight-bold mb-3 p-0">
-                          <strong>Title of the news</strong>
-                        </h3>
-                        <p className="dark-grey-text">
-                          Nam libero tempore, cum soluta nobis est eligendi
-                          optio cumque nihil impedit quo minus id quod maxime
-                          placeat facere possimus, omnis voluptas assumenda est,
-                          omnis dolor repellendus et aut officiis debitis cum
-                          soluta nobis est eligendi placeat facere aut rerum.
-                        </p>
-                        <p>
-                          by{" "}
-                          <a href="#!" className="font-weight-bold">
-                            Jessica Clark
-                          </a>
-                          , 19/04/2018
-                        </p>
-                        <Link to={`/blogs/${card.author}`}>
-                          <MDBBtn color="primary" size="md">
-                            Read More
-                          </MDBBtn>
-                        </Link>
-                      </MDBCol>
-                    </MDBRow>
-                  </MDBCardBody>
-                </MDBCard>
+            {FakeEvents.map((card, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7tcKMMngtjpqCxaIKyy5DeiqKgSUYxYW9IQ&usqp=CAU"
+                    title={card.Title}
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {card.Title}
+                    </Typography>
+                    <Typography>{card.About}</Typography>
+                  </CardContent>
+                  <CardActions>
+                  <Link to={`/events/${index}`}>
+                    <Button size="small" color="primary" onClick = {() => readArticle(index)}>
+                      Click for more details
+                    </Button>
+                    </Link>
+                  </CardActions>
+                </Card>
               </Grid>
             ))}
           </Grid>
