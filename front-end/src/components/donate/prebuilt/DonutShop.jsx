@@ -10,7 +10,7 @@ const Shop = styled.div`
 
 const ShopName = styled.h1`
   font-size: 18px;
-  color: #fff;
+
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
