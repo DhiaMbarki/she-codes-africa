@@ -43,7 +43,7 @@ class NavigationBar extends React.Component {
   }}>
      <Nav.Link >Blogs</Nav.Link>
      </LinkContainer>
-     <LinkContainer to="/upcomingEvents">
+     <LinkContainer to="/events">
      <Nav.Link >Upcoming events</Nav.Link>
      </LinkContainer> 
      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
@@ -63,14 +63,8 @@ class NavigationBar extends React.Component {
      <NavDropdown.Item >Logout</NavDropdown.Item>
      </LinkContainer>
      </NavDropdown>
-
-     
-
      </Nav>
-   
      )
-
-     
      : 
      (
       <>

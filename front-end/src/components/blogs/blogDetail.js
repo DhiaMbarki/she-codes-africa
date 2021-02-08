@@ -16,6 +16,8 @@ import {
   TwitterIcon,
 } from "react-share";
 
+
+
 function BlogDetails() {
   // We can use the `useParams` hook here to access
   // the dynamic pieces of the URL.
@@ -106,7 +108,8 @@ function BlogDetails() {
 
             <p style={{ paddingLeft: "5px" }}>I like this article</p>
 
-            <div style={{ width: "2rem", paddingLeft: "5px" }}>
+            <div style={{ width: "2rem"}}>
+              
               <Heart
                 isActive={active}
                 onClick={() => setActive(!active)}

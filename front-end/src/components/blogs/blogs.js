@@ -241,7 +241,7 @@ export default function Blogs() {
                           , 19/04/2018
                         </p>
                         <Link to={`/blogs/${card.author}`}>
-                          <MDBBtn color="primary" size="md">
+                          <MDBBtn color="primary" size="md" onClick={()=>readArticle(card.author)}>
                             Read More
                           </MDBBtn>
                         </Link>

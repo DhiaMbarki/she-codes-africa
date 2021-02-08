@@ -3,10 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
+  useParams
 } from "react-router-dom";
-import { connect } from "react-redux";
+
 //IMPORTING ALL THE COMPONENTS
 import Home from "./components/pages/home";
 import Donate from "./components/pages/donate";
@@ -18,7 +17,9 @@ import Logout from "./components/pages/logout";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/blogs";
 
+
 import BlogDetails from "./components/blogs/blogDetail";
+import EventDetails from "./components/events/eventDetail";
 
 import "./App.css";
 
@@ -39,7 +40,9 @@ class App extends React.Component {
             <Route path="/signIn" component={SignIn} />
             <Route path="/signUp" component={SignUp} />
             <Route path="/logout" component={Logout} />
-            <Route path="/events" component={Events} />
+            
+            <Route exact path="/events" component={Events} />
+            <Route path="/events/:id" children={<EventDetails />} />
 
             <Route exact path="/blogs" component={Blogs} />
             <Route path="/blogs/:id" children={<BlogDetails />} />
@@ -51,3 +54,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+
