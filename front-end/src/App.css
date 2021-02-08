@@ -27,4 +27,14 @@ padding-left: 100px;
 .aboutme{
   margin-left: 300px;
 }
- 
+.edcolumn1{
+  float: left;
+}
+.edcolumn2{
+  float: left;
+  width: 700px;
+  margin-left: 100px;
+}
+.footer{
+  margin-left: 700px;
+}

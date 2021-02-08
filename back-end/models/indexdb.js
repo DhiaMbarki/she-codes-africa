@@ -1,5 +1,4 @@
 const dbConfig = require("../config/db.config.js");
-
 const {Sequelize} = require("sequelize");
 const db = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
@@ -10,7 +9,7 @@ const db = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     acquire: dbConfig.pool.acquire,
     idle: dbConfig.pool.idle,
   },
-});
+}); 
 
 
 
