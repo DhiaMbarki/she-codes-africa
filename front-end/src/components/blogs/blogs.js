@@ -1,23 +1,12 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-// import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
-import { ListGroup, ListGroupItem } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Redirect, Link } from "react-router-dom";
-
-//////
+import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -30,21 +19,6 @@ import {
   MDBCol,
   MDBBtn,
 } from "mdbreact";
-/////
-// import BlogDetails from './blogDetail'
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -183,31 +157,6 @@ export default function Blogs() {
           <Grid container spacing={4}>
             {dummy.map((card) => (
               <Grid item key={card.author}>
-                {/* 
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={card.img}
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Link to="/blogs/4">
-                      <Button size="small" color="primary"  onClick = {() => readArticle(card.author) }>
-                      Views
-                      </Button>
-                    </Link>
-                  </CardActions>
-                </Card> */}
-
                 <MDBCard className="my-5 px-5 pb-5">
                   <MDBCardBody>
                     <MDBRow>
@@ -241,7 +190,11 @@ export default function Blogs() {
                           , 19/04/2018
                         </p>
                         <Link to={`/blogs/${card.author}`}>
-                          <MDBBtn color="primary" size="md" onClick={()=>readArticle(card.author)}>
+                          <MDBBtn
+                            color="primary"
+                            size="md"
+                            onClick={() => readArticle(card.author)}
+                          >
                             Read More
                           </MDBBtn>
                         </Link>
@@ -254,22 +207,6 @@ export default function Blogs() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }
