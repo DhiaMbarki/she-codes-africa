@@ -35,12 +35,12 @@ class App extends React.Component {
           <NavigationBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/donate" component={Donate} />
             <Route path="/about" component={About} />
             <Route path="/signIn" component={SignIn} />
             <Route path="/signUp" component={SignUp} />
             <Route path="/logout" component={Logout} />
             
+            <Route path="/donate" component={Donate} />
             <Route exact path="/events" component={Events} />
             <Route path="/events/:id" children={<EventDetails />} />
 
