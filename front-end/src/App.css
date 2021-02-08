@@ -1,0 +1,40 @@
+img {
+    border-radius: 50%;
+    float: left;
+  }
+.colum1{
+  float: left;
+}
+.App {
+  width: 90%;
+  margin: auto;
+}
+
+
+#labelname{
+
+padding-left: 100px;
+
+}
+#clearevent{
+  margin-left: 30px;
+}
+#lable, #name{
+  margin-left: 90px;
+}
+
+
+.aboutme{
+  margin-left: 300px;
+}
+.edcolumn1{
+  float: left;
+}
+.edcolumn2{
+  float: left;
+  width: 700px;
+  margin-left: 100px;
+}
+.footer{
+  margin-left: 700px;
+}
