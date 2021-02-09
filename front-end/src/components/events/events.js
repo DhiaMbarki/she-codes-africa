@@ -13,6 +13,10 @@ import Container from "@material-ui/core/Container";
 import { Redirect, Link } from "react-router-dom";
 import FakeEvents from "../events/fakeEvents";
 
+
+import { useSelector } from 'react-redux';
+
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -60,7 +64,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Events() {
-  const classes = useStyles(FakeEvents);
+
+  const events = useSelector((state) => {return state.events})
+  console.log(events)
+
+  const classes = useStyles(events);
 
   const readArticle = (e) => {
     console.log(e);
@@ -98,12 +106,12 @@ export default function Events() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {FakeEvents.map((card, index) => (
+            {events.map((card, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7tcKMMngtjpqCxaIKyy5DeiqKgSUYxYW9IQ&usqp=CAU"
+                    image="https://www.avarievents.com/wp-content/uploads/2019/07/1-3-1080x450.jpg"
                     title={card.Title}
                   />
                   <CardContent className={classes.cardContent}>

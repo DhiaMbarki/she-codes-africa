@@ -17,9 +17,13 @@ import Logout from "./components/pages/logout";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/blogs";
 
+import CodingResources from './components/pages/codingResources'
 
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
+
+import ViewJobs from './components/pages/viewJobs'
+import JOBDetails from './components/pages/jobDetail'
 
 import "./App.css";
 
@@ -39,7 +43,11 @@ class App extends React.Component {
             <Route path="/about" component={About} />
             <Route path="/signIn" component={SignIn} />
             <Route path="/signUp" component={SignUp} />
+            <Route path="/codingResources" component={CodingResources} />
             <Route path="/logout" component={Logout} />
+
+            <Route exact path="/viewJobs" component={ViewJobs} />
+            <Route path="/viewJobs/:id" children={<JOBDetails/>} />
             
             <Route exact path="/events" component={Events} />
             <Route path="/events/:id" children={<EventDetails />} />

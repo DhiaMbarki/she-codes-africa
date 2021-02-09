@@ -36,11 +36,7 @@ class NavigationBar extends React.Component {
     {user ? (
 
       <Nav>
-
-
-     <LinkContainer to={{
-    pathname: "/blogs",
-  }}>
+     <LinkContainer to="/blogs">
      <Nav.Link >Blogs</Nav.Link>
      </LinkContainer>
      <LinkContainer to="/events">
@@ -53,8 +49,11 @@ class NavigationBar extends React.Component {
      <LinkContainer to="/">
      <NavDropdown.Item >Edit profile</NavDropdown.Item>
      </LinkContainer>
-     <LinkContainer to="/" >
+     <LinkContainer to="/viewJobs" >
      <NavDropdown.Item >View jobs</NavDropdown.Item>
+     </LinkContainer>
+     <LinkContainer to="/codingResources" >
+     <NavDropdown.Item >Coding resources</NavDropdown.Item>
      </LinkContainer>
      <LinkContainer to="/">
      <NavDropdown.Item >Webinar</NavDropdown.Item>
