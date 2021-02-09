@@ -6,7 +6,7 @@ const Memberstable = db.define("Memberstable", {
     type: Sequelize.STRING
   },
   PhotosprofileUrl: {
-    type: Sequelize.STRING
+    type: Sequelize.TEXT('long')
   },
   Firstname: {
     type: Sequelize.STRING

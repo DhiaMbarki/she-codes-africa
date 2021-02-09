@@ -8,12 +8,15 @@ import { Checkbox, CheckboxGroup, Stack } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react"
 import { Button, ButtonGroup } from "@chakra-ui/react"
-//const axios = require('axios');
 import  $  from "jquery";
+import  { connect } from 'react-redux'
+import addprofileaction from '../../redux/actions/editprofileaction'
 
 class EditProfile extends Component {
     constructor(propos) {
         super(propos);
+        console.log("props:",propos.addnewprofile);
+        console.log("datasdata:",propos.datas);
         this.state = {
             Profilelimage: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
             firstname: '',
@@ -64,6 +67,7 @@ class EditProfile extends Component {
         this.setState({ codingsticktolearn: event.target.value })
     }
     fileSelecHandler(event) {
+        console.log(event.target.files[0].name)
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
@@ -91,15 +95,23 @@ class EditProfile extends Component {
        YearsOfexperience: Number(this.state.yearsintech),
        Codingstackinuse: this.state.codingstuckinuse,
        Codingstacktolearn:  this.state.codingsticktolearn,
-       })
-         .then( (response) =>{
-            console.log( "res from server:",response.Savedata);
+       }).then( (response) =>{
+            console.log( "res from server:",response.Savedata.Firstname);
           alert("Profile is  Saved with succes")
-          })
+          }).then((response) => { this.props.addnewprofile(response.Savedata.PhotosprofileUrl,response.Savedata.Firstname,response.Savedata.Biography,response.Savedata.Githubacountlink,response.Savedata.Linkedincountlink,response.Savedata.Websiteurl)})
           .catch( (error) =>{
             console.log("errorfromser:",error);
           });
     }
+
+
+    /*PhotosprofileUrl:"",
+        Firstname:"",
+        Biography:"",
+        Githubacountlink:"",
+        Linkedincountlink:"",
+        Websiteurl:"",
+  };*/
 
     render() {
         return (
@@ -207,5 +219,17 @@ class EditProfile extends Component {
         )
     }
 }
-export default EditProfile
+const mapStateToProps = (state) => {
+
+    return {datas: state}
+  };
+ const mapDispatchToProps = (dispatch) => {
+    return {
+      addnewprofile: (PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl) => {
+        dispatch(addprofileaction(PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl))
+      }
+    }
+  };
+const Container = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
+export default Container
 

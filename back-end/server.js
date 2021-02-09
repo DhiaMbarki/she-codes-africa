@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({  extended: true }));
+app.use(bodyParser.urlencoded({ limit: '50mb',extended: true } ));
 
 
 
