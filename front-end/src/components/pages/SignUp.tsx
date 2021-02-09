@@ -1,9 +1,4 @@
 // sign up .js
-
-
-
-
-
 import React, { FC, useState, FormEvent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,11 +13,12 @@ const SignUp: FC = () => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [type, setType] = useState('')
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { error } = useSelector((state: RootState) => state.auth);
-
   useEffect(() => {
+    console.log(error)
     return () => {
       if(error) {
         dispatch(setError(''));
@@ -30,14 +26,16 @@ const SignUp: FC = () => {
     }
   }, [error, dispatch]);
 
+
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     if(error) {
       dispatch(setError(''));
     }
     setLoading(true);
-    dispatch(signup({ email, password, firstName }, () => setLoading(false)));
+    dispatch(signup({ email, password, firstName, type  }, () => setLoading(false)));
   }
+  
 
   return(
     <section className="section">
@@ -70,27 +68,15 @@ const SignUp: FC = () => {
           />
 
 
-<div>
-  <label>
-    <input type="radio" className="option-input radio" name="example" checked />
+    <input  
+ type="radio" className="option-input radio" value={type} onClick={() => console.log(type)} name="example" onChange = {(e)=>setType("Company")} />
     as Company
-  </label>
-  <label>
-    <input type="radio" className="option-input radio" name="example" />
-    as User
-  </label>
   
-</div>
-
-
-
-
-
-      
+    <input type="radio" className="option-input radio" value={type} name="example" onClick={() => console.log(type)} onChange = {(e)=>setType("User")} />
+    as User
           <Button text={loading ? "Loading..." : "Sign Up"} className="is-primary is-fullwidth mt-5" disabled={loading} />
         </form>
-      </div>
-      
+      </div>      
     </section>
   );
 }
