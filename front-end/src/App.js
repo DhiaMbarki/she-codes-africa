@@ -18,6 +18,8 @@ import NavigationBar from "./components/pages/navigation";
 import Logout from "./components/pages/logout";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/blogs";
+import EditProfile from "./components/profile/editProfile";
+import Viewprofile from "./components/profile/viewProfile";
 
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
@@ -54,6 +56,8 @@ class App extends React.Component {
             <Route path="/logout" component={Logout} />
 
             <Route path="/donate" component={Donate} />
+            <Route exact path="/viewprofile" component={Viewprofile} />
+            <Route exact path="/editProfile" component={EditProfile} />
             <Route exact path="/events" component={Events} />
             <Route path="/events/:id" children={<EventDetails />} />
 
