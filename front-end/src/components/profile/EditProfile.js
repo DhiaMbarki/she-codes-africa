@@ -67,7 +67,7 @@ class EditProfile extends Component {
         this.setState({ codingsticktolearn: event.target.value })
     }
     fileSelecHandler(event) {
-        console.log(event.target.files[0].name)
+       
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
@@ -105,14 +105,7 @@ class EditProfile extends Component {
     }
 
 
-    /*PhotosprofileUrl:"",
-        Firstname:"",
-        Biography:"",
-        Githubacountlink:"",
-        Linkedincountlink:"",
-        Websiteurl:"",
-  };*/
-
+    
     render() {
         return (
             <>

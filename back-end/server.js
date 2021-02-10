@@ -4,11 +4,12 @@ const cors = require("cors");
 require('dotenv').config()
 const { db } = require("./models/indexdb")
 const app = express();
-const memerout=require("./routes/membersroute")
+const memerout = require("./routes/membersroute")
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+
+//var corsOptions = {
+  //origin: "http://localhost:8081"
+//};
 
 app.use(cors());
 
@@ -16,15 +17,17 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ limit: '50mb',extended: true } ));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 
 
 //setup connection to database
 db.authenticate()
-  .then(() => console.log("Connection has been established successfully to shecodeafrica database.")) 
+  .then(() => console.log("Connection has been established successfully to shecodeafrica database."))
   .catch((err) => console.log("Unable to connect to the shecodeafrica database:" + err));
+//serve images in directory named images 
+app.use('/images', express.static('Images'))
 // use the root 
 app.use("/", memerout);
 
