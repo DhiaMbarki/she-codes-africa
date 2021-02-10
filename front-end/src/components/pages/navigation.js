@@ -26,7 +26,6 @@ class NavigationBar extends React.Component {
             <LinkContainer to="/donate">
               <Nav.Link>Donate</Nav.Link>
             </LinkContainer>
-
             {user ? (
               <Nav>
                 <LinkContainer

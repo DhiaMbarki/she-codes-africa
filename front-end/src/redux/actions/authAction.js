@@ -1,5 +1,5 @@
 export const signInAction = ({ email, password }) => ({
-  type: "SIGN_UP",
+  type: "SIGN_IN",
   payload: {
     email,
     password,
