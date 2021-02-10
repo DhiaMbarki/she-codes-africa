@@ -1,11 +1,9 @@
 import { React, useState } from "react";
 import Heart from "react-heart";
 
-import {
-   useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { MDBContainer} from "mdbreact";
+import { MDBContainer } from "mdbreact";
 
 import {
   FacebookShareButton,
@@ -15,8 +13,6 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
-
-
 
 function BlogDetails() {
   // We can use the `useParams` hook here to access
@@ -108,8 +104,7 @@ function BlogDetails() {
 
             <p style={{ paddingLeft: "5px" }}>I like this article</p>
 
-            <div style={{ width: "2rem"}}>
-              
+            <div style={{ width: "2rem" }}>
               <Heart
                 isActive={active}
                 onClick={() => setActive(!active)}

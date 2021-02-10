@@ -11,7 +11,10 @@ class BlogsCard extends Component {
       <div>
         <h2>Blogs</h2>
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" />
+          <Card.Img
+            variant="top"
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
+          />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>

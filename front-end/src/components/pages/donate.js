@@ -7,10 +7,9 @@ import DonutShop from "../donate/prebuilt/DonutShop";
 import CheckoutForm from "../donate/CheckoutForm";
 import getDonutPrice from "../../stripe/get-donut-price";
 
-
 const MainPage = (props) => {
   const [numDonuts, setNumDonuts] = useState(1);
-  const history = useHistory(); 
+  const history = useHistory();
 
   const addDonut = () => setNumDonuts((num) => Math.min(12, num + 1));
   const remDonut = () => setNumDonuts((num) => Math.max(1, num - 1));

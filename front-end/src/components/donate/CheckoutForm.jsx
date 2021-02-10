@@ -26,7 +26,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const stripe = useStripe();
   const elements = useElements();
   useEffect(() => {
-    console.log(stripe)
+    console.log(stripe);
   }, []);
 
   const handleCardDetailsChange = (ev) => {
