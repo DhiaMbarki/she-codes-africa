@@ -2,8 +2,8 @@ import React, { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Message from '../UI/Message';
-import { setSuccess } from '../../store/actions/authActions';
-import { RootState } from '../../store';
+import { setSuccess } from '../../redux/actions/authActions';
+import { RootState } from '../../redux/index';
 
 const Dashboard: FC = () => {
   const { user, needVerification, success } = useSelector((state: RootState) => state.auth);

@@ -13,7 +13,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import './firebase/config'
 import './firebase/config';
 import 'bulma/css/bulma.min.css';
-import store from './store';
+import store from './redux/index';
 
 
 
