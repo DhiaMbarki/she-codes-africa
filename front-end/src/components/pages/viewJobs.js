@@ -147,7 +147,7 @@ var dummy = [
 ];
 
 export default function ViewJobs() {
-  const classes = useStyles(dummy);
+  //const classes = useStyles(dummy);
 
   const readArticle = (e) => {
     console.log(e);
@@ -178,7 +178,7 @@ export default function ViewJobs() {
                   <p className="font-weight-normal">Company X</p>
                 </MDBBox>
                 <Link to={`/viewJobs/${index}`}>
-                <MDBBtn color="primary">More details</MDBBtn>
+                <MDBBtn color="primary" onClick = {()=>readArticle(index)}>More details</MDBBtn>
                 </Link>
               </MDBCol>
             </MDBRow>

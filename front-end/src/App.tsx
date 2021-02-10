@@ -21,6 +21,11 @@ import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 
+import ViewJobs  from './components/pages/viewJobs'
+import JOBDetails  from './components/pages/jobDetail'
+import CodingResources from './components/pages/codingResources'
+
+
 import firebase from "./firebase/config";
 import {
   getUserById,
@@ -77,6 +82,13 @@ const App: FC = () => {
           <PrivateRoute path="/dashboard" component={Dashboard} exact />
           <Route exact path="/viewprofile" component={Viewprofile} />
           <Route exact path="/editProfile" component={EditProfile} />
+
+          <Route exact path="/viewJobs" component={ViewJobs} />
+          <Route path="/viewJobs/:id" children={<JOBDetails/>} />
+
+          <Route exact path="/codingResources" component={CodingResources} />
+
+
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
