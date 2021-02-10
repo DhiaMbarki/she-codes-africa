@@ -13,7 +13,6 @@ import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import FakeEvents from "../events/fakeEvents";
 
-
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -45,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6),
   },
 }));
-
 
 export default function Events() {
   const classes = useStyles(FakeEvents);
@@ -101,10 +99,14 @@ export default function Events() {
                     <Typography>{card.About}</Typography>
                   </CardContent>
                   <CardActions>
-                  <Link to={`/events/${index}`}>
-                    <Button size="small" color="primary" onClick = {() => readArticle(index)}>
-                      Click for more details
-                    </Button>
+                    <Link to={`/events/${index}`}>
+                      <Button
+                        size="small"
+                        color="primary"
+                        onClick={() => readArticle(index)}
+                      >
+                        Click for more details
+                      </Button>
                     </Link>
                   </CardActions>
                 </Card>
@@ -113,7 +115,6 @@ export default function Events() {
           </Grid>
         </Container>
       </main>
-     
     </React.Fragment>
   );
 }

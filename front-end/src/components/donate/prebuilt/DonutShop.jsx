@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import Image from "./Image";
-import Img from "./donut.png"
+import Img from "./donut.png";
 import DonutQuantity from "./DonutQuantity";
 
 const Shop = styled.div`

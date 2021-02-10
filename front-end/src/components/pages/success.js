@@ -36,7 +36,11 @@ export default () => {
       <Container>
         <Confetti width={width} height={height} numberOfPieces={450} />
         <Title>congrats!</Title>
-        <Message> your payment has been successfully processed thank you for your support </Message>
+        <Message>
+          {" "}
+          your payment has been successfully processed thank you for your
+          support{" "}
+        </Message>
       </Container>
     </Layout>
   );

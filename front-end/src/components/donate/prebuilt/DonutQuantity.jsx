@@ -18,7 +18,7 @@ const Button = styled.span`
   display: inline-block;
   width: 30px;
   line-height: 38px;
-  
+
   height: 40px;
   text-align: center;
   font-weight: bold;

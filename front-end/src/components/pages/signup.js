@@ -1,13 +1,13 @@
 // sign up .js
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SignUp extends Component {
   render() {
     return (
-        <div>
-          <h2>Sign up</h2>
-        </div>
+      <div>
+        <h2>Sign up</h2>
+      </div>
     );
   }
 }

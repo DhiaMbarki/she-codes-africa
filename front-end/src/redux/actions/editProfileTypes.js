@@ -1,1 +1,1 @@
-export const ADD_PROFILE='ADD_PROFILE';
+export const ADD_PROFILE = "ADD_PROFILE";

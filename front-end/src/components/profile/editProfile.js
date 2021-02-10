@@ -1,5 +1,5 @@
-import React from 'react'
-import { Component } from 'react'
+import React from "react";
+import { Component } from "react";
 // import { Input } from "@chakra-ui/react"
 // import { Text } from "@chakra-ui/react";
 // import { Textarea } from "@chakra-ui/react"
@@ -8,109 +8,119 @@ import { Component } from 'react'
 // import { Select } from "@chakra-ui/react";
 // import { Image } from "@chakra-ui/react"
 // import { Button, ButtonGroup } from "@chakra-ui/react"
-import  $  from "jquery";
-import  { connect } from 'react-redux'
-import addProfileAction from '../../redux/actions/editProfileAction'
+import $ from "jquery";
+import { connect } from "react-redux";
+import addProfileAction from "../../redux/actions/editProfileAction";
 
 class EditProfile extends Component {
-    constructor(propos) {
-        super(propos);
-        console.log("props:",propos.addnewprofile);
-        console.log("datasdata:",propos.datas);
-        this.state = {
-            Profilelimage: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
-            firstname: '',
-            lastname: '',
-            location: '',
-            biograpthy: '',
-            selectedGender: '',
-            selectedchoise: '',
-            website: '',
-            githubaccount: '',
-            linkedinaccount: '',
-            companyname: '',
-            jobtitle: '',
-            yearsintech: "",
-            engnchoice: '',
-            codingstuckinuse: '',
-            codingsticktolearn: '',
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.ChangeGender = this.ChangeGender.bind(this);
-        this.Changechoice = this.Changechoice.bind(this);
-        this.ChangeEnngenchoice = this.ChangeEnngenchoice.bind(this);
-        this.Changestackinuse = this.Changestackinuse.bind(this);
-        this.Changestacktolearn = this.Changestacktolearn.bind(this);
-        this.fileSelecHandler = this.fileSelecHandler.bind(this);
-        this.handlesave=this.handlesave.bind(this);
-    }
-    imageSelectedhandler(event) {
-        console.log(event.target.files)
-    }
-    handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
-    }
-    ChangeGender(event) {
-        this.setState({ selectedGender: event.target.value })
-    }
-    Changechoice(event) {
-        this.setState({ selectedchoise: event.target.value })
+  constructor(propos) {
+    super(propos);
+    console.log("props:", propos.addnewprofile);
+    console.log("datasdata:", propos.datas);
+    this.state = {
+      Profilelimage:
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      firstname: "",
+      lastname: "",
+      location: "",
+      biograpthy: "",
+      selectedGender: "",
+      selectedchoise: "",
+      website: "",
+      githubaccount: "",
+      linkedinaccount: "",
+      companyname: "",
+      jobtitle: "",
+      yearsintech: "",
+      engnchoice: "",
+      codingstuckinuse: "",
+      codingsticktolearn: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.ChangeGender = this.ChangeGender.bind(this);
+    this.Changechoice = this.Changechoice.bind(this);
+    this.ChangeEnngenchoice = this.ChangeEnngenchoice.bind(this);
+    this.Changestackinuse = this.Changestackinuse.bind(this);
+    this.Changestacktolearn = this.Changestacktolearn.bind(this);
+    this.fileSelecHandler = this.fileSelecHandler.bind(this);
+    this.handlesave = this.handlesave.bind(this);
+  }
+  imageSelectedhandler(event) {
+    console.log(event.target.files);
+  }
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+  ChangeGender(event) {
+    this.setState({ selectedGender: event.target.value });
+  }
+  Changechoice(event) {
+    this.setState({ selectedchoise: event.target.value });
+  }
+  ChangeEnngenchoice(event) {
+    this.setState({ engnchoice: event.target.value });
+  }
+  Changestackinuse(event) {
+    this.setState({ codingstuckinuse: event.target.value });
+  }
+  Changestacktolearn(event) {
+    this.setState({ codingsticktolearn: event.target.value });
+  }
+  fileSelecHandler(event) {
+    console.log(event.target.files[0].name);
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        this.setState({ Profilelimage: reader.result });
+      }
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+  handlesave() {
+    $.post("http://localhost:3000/editprofile", {
+      IdFb: "",
+      PhotosprofileUrl: this.state.Profilelimage,
+      Firstname: this.state.firstname,
+      Lastname: this.state.lastname,
+      DateOfBirth: "",
+      Biography: this.state.biograpthy,
+      Location: this.state.location,
+      Githubacountlink: this.state.githubaccount,
+      Linkedincountlink: this.state.linkedinaccount,
+      Websiteurl: this.state.website,
+      Engineeringareas: this.state.engnchoice,
+      Gender: this.state.selectedGender,
+      Howcanwehelpyousucced: this.state.selectedchoise,
+      Companyname: this.state.companyname,
+      Jobtitle: this.state.jobtitle,
+      YearsOfexperience: Number(this.state.yearsintech),
+      Codingstackinuse: this.state.codingstuckinuse,
+      Codingstacktolearn: this.state.codingsticktolearn,
+    })
+      .then((response) => {
+        console.log("res from server:", response.Savedata.Firstname);
+        alert("Profile is  Saved with succes");
+      })
+      .then((response) => {
+        this.props.addnewprofile(
+          response.Savedata.PhotosprofileUrl,
+          response.Savedata.Firstname,
+          response.Savedata.Biography,
+          response.Savedata.Githubacountlink,
+          response.Savedata.Linkedincountlink,
+          response.Savedata.Websiteurl
+        );
+      })
+      .catch((error) => {
+        console.log("errorfromser:", error);
+      });
+  }
 
-    }
-    ChangeEnngenchoice(event) {
-        this.setState({ engnchoice: event.target.value })
-    }
-    Changestackinuse(event) {
-        this.setState({ codingstuckinuse: event.target.value })
-    }
-    Changestacktolearn(event) {
-        this.setState({ codingsticktolearn: event.target.value })
-    }
-    fileSelecHandler(event) {
-        console.log(event.target.files[0].name)
-        const reader = new FileReader();
-        reader.onload = () => {
-            if (reader.readyState === 2) {
-                this.setState({ Profilelimage: reader.result })
-            }
-        }
-        reader.readAsDataURL(event.target.files[0])
-    }
-    handlesave(){
-       $.post('http://localhost:3000/editprofile',{IdFb: "",
-       PhotosprofileUrl:this.state.Profilelimage,
-       Firstname: this.state.firstname,
-       Lastname: this.state.lastname,
-       DateOfBirth : "",
-       Biography:this.state.biograpthy,
-       Location: this.state.location,
-       Githubacountlink: this.state.githubaccount,
-       Linkedincountlink: this.state.linkedinaccount,
-       Websiteurl: this.state.website,
-       Engineeringareas: this.state.engnchoice,
-       Gender:this.state.selectedGender,
-       Howcanwehelpyousucced: this.state.selectedchoise,
-       Companyname: this.state.companyname,
-       Jobtitle:this.state.jobtitle,
-       YearsOfexperience: Number(this.state.yearsintech),
-       Codingstackinuse: this.state.codingstuckinuse,
-       Codingstacktolearn:  this.state.codingsticktolearn,
-       }).then( (response) =>{
-            console.log( "res from server:",response.Savedata.Firstname);
-          alert("Profile is  Saved with succes")
-          }).then((response) => { this.props.addnewprofile(response.Savedata.PhotosprofileUrl,response.Savedata.Firstname,response.Savedata.Biography,response.Savedata.Githubacountlink,response.Savedata.Linkedincountlink,response.Savedata.Websiteurl)})
-          .catch( (error) =>{
-            console.log("errorfromser:",error);
-          });
-    }
-
-
-    render() {
-        return (
-            <>
-                <div className="edcolumn1">
-                    
-                   { /* <Image borderRadius="full" boxSize="150px" src={this.state.Profilelimage} alt="My profile Image" />
+  render() {
+    return (
+      <>
+        <div className="edcolumn1">
+          {/* <Image borderRadius="full" boxSize="150px" src={this.state.Profilelimage} alt="My profile Image" />
                     <Input style={{ display: 'none' }} type="file" onChange={this.fileSelecHandler} ref={filein => this.filein = filein} /><br></br>
                     <Button colorScheme="teal" size="sm" onClick={() => this.filein.click()}>Add   photo </Button><br></br>
                     <hr />
@@ -202,24 +212,37 @@ class EditProfile extends Component {
                             <option value="Grails">Grails</option>
                         </Select>
                     </form><b></b> */}
-                    <h1>edit profile</h1>
-                </div>
-
-            </>
-        )
-    }
+          <h1>edit profile</h1>
+        </div>
+      </>
+    );
+  }
 }
 const mapStateToProps = (state) => {
-
-    return {datas: state}
+  return { datas: state };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addnewprofile: (
+      PhotosprofileUrl,
+      Firstname,
+      Biography,
+      Githubacountlink,
+      Linkedincountlink,
+      Websiteurl
+    ) => {
+      dispatch(
+        addProfileAction(
+          PhotosprofileUrl,
+          Firstname,
+          Biography,
+          Githubacountlink,
+          Linkedincountlink,
+          Websiteurl
+        )
+      );
+    },
   };
- const mapDispatchToProps = (dispatch) => {
-    return {
-      addnewprofile: (PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl) => {
-        dispatch(addProfileAction(PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl))
-      }
-    }
-  };
+};
 const Container = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
-export default Container
-
+export default Container;
