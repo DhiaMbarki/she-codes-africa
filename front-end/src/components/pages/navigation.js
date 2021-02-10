@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
+import { signout } from "../../store/actions/authActions";
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -10,8 +11,7 @@ class NavigationBar extends React.Component {
   }
 
   render() {
-    const user = this.props.user;
-    console.log(user);
+    const { user, signout } = this.props;
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">She Codes Africa</Navbar.Brand>
@@ -26,7 +26,6 @@ class NavigationBar extends React.Component {
             <LinkContainer to="/donate">
               <Nav.Link>Donate</Nav.Link>
             </LinkContainer>
-
             {user ? (
               <Nav>
                 <LinkContainer
@@ -52,9 +51,7 @@ class NavigationBar extends React.Component {
                   <LinkContainer to="/">
                     <NavDropdown.Item>Webinar</NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/logout">
-                    <NavDropdown.Item>Logout</NavDropdown.Item>
-                  </LinkContainer>
+                  <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             ) : (
@@ -79,4 +76,6 @@ const mapStateToProps = (state) => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(NavigationBar);
+const mapDispatchToProps = { signout };
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
