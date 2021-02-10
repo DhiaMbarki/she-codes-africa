@@ -1,11 +1,9 @@
 import { React, useState } from "react";
 import Heart from "react-heart";
 
-import {
-   useParams,
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { MDBContainer} from "mdbreact";
+import { MDBContainer } from "mdbreact";
 
 import {
   FacebookShareButton,
@@ -87,8 +85,7 @@ function BlogDetails() {
 
             <p style={{ paddingLeft: "5px" }}>I like this article</p>
 
-            <div style={{ width: "2rem"}}>
-              
+            <div style={{ width: "2rem" }}>
               <Heart
                 isActive={active}
                 onClick={() => setActive(!active)}

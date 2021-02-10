@@ -7,10 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Redirect, Link } from "react-router-dom";
-
 import { useSelector } from 'react-redux';
-
-
 //////
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -24,21 +21,6 @@ import {
   MDBCol,
   MDBBtn,
 } from "mdbreact";
-/////
-// import BlogDetails from './blogDetail'
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -148,7 +130,11 @@ export default function Blogs() {
                           , {card.postedAt}
                         </p>
                         <Link to={`/blogs/${card.author}`}>
-                          <MDBBtn color="primary" size="md" onClick={()=>readArticle(card.author)}>
+                          <MDBBtn
+                            color="primary"
+                            size="md"
+                            onClick={() => readArticle(card.author)}
+                          >
                             Read More
                           </MDBBtn>
                         </Link>
@@ -161,22 +147,6 @@ export default function Blogs() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
     </React.Fragment>
   );
 }

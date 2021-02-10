@@ -3,8 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
+  useParams,
 } from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
+import { Redirect, Link } from "react-router-dom";
 
 //IMPORTING ALL THE COMPONENTS
 import Home from "./components/pages/home";
@@ -16,16 +18,27 @@ import NavigationBar from "./components/pages/navigation";
 import Logout from "./components/pages/logout";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/blogs";
-
-import CodingResources from './components/pages/codingResources'
-
+import CodingResources from "./components/pages/codingResources";
+import EditProfile from "./components/profile/editProfile";
+import Viewprofile from "./components/profile/viewProfile";
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
-
-import ViewJobs from './components/pages/viewJobs'
-import JOBDetails from './components/pages/jobDetail'
+import ViewJobs from "./components/pages/viewJobs";
+import JOBDetails from "./components/pages/jobDetail";
 
 import "./App.css";
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://material-ui.com/">
+        She Codes Africa
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 class App extends React.Component {
   constructor() {
@@ -39,22 +52,35 @@ class App extends React.Component {
           <NavigationBar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/donate" component={Donate} />
             <Route path="/about" component={About} />
             <Route path="/signIn" component={SignIn} />
             <Route path="/signUp" component={SignUp} />
             <Route path="/codingResources" component={CodingResources} />
             <Route path="/logout" component={Logout} />
-
             <Route exact path="/viewJobs" component={ViewJobs} />
-            <Route path="/viewJobs/:id" children={<JOBDetails/>} />
-            
+            <Route path="/viewJobs/:id" children={<JOBDetails />} />
+            <Route path="/donate" component={Donate} />
+            <Route exact path="/viewprofile" component={Viewprofile} />
+            <Route exact path="/editProfile" component={EditProfile} />
             <Route exact path="/events" component={Events} />
             <Route path="/events/:id" children={<EventDetails />} />
-
             <Route exact path="/blogs" component={Blogs} />
             <Route path="/blogs/:id" children={<BlogDetails />} />
           </Switch>
+          <footer>
+            <Typography variant="h6" align="center" gutterBottom>
+              Footer
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="center"
+              color="textSecondary"
+              component="p"
+            >
+              Something here to give the footer a purpose!
+            </Typography>
+            <Copyright />
+          </footer>
         </div>
       </Router>
     );
@@ -62,5 +88,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
