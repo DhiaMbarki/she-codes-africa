@@ -3,12 +3,8 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import authReducer from './reducers/authReducer';
-
-
- import editProfileReducer from "../redux/reducers/editProfileReducer";//".   /editProfileReducer";
-
- import blogReducer from "../redux/reducers/blogsReducer";  //blogsReducer
-
+ import editProfileReducer from "../redux/reducers/editProfileReducer";
+ import blogReducer from "../redux/reducers/blogsReducer";  
  import eventReducer from "../redux/reducers/eventsReducer";
 
 

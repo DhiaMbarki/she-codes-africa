@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
-import { signout } from "../../store/actions/authActions";
+import { signout } from "../../redux/actions/authActions";
 
 class NavigationBar extends React.Component {
   constructor(props) {

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import Input from '../UI/input';
 import Button from '../UI/Button';
 import Message from '../UI/Message';
-import { signin, setError } from '../../store/actions/authActions';
-import { RootState } from '../../store';
+import { signin, setError } from '../../redux/actions/authActions';
+import { RootState } from '../../redux/index';
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState('');

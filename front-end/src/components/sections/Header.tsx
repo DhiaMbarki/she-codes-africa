@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../UI/Button';
-import { RootState } from '../../store';
-import { signout } from '../../store/actions/authActions';
+import { RootState } from '../../redux/index';
+import { signout } from '../../redux/actions/authActions';
 import './Header.css'
 
 const Header: FC = () => {
