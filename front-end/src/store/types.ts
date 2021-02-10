@@ -9,6 +9,7 @@ export interface User {
   firstName: string;
   email: string;
   id: string;
+  type: string;
   createdAt: any;
 }
 
@@ -25,6 +26,7 @@ export interface SignUpData {
   firstName: string;
   email: string;
   password: string;
+  type: string;
 }
 
 export interface SignInData {

@@ -3,13 +3,6 @@ import { SignUpData, AuthAction, SET_USER, User, SET_LOADING, SIGN_OUT, SignInDa
 import { RootState } from '..';
 import firebase from '../../firebase/config';
 
-
-
-
-
-
-
-
 // Create user
 export const signup = (data: SignUpData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
   return async dispatch => {
@@ -20,6 +13,7 @@ export const signup = (data: SignUpData, onError: () => void): ThunkAction<void,
           email: data.email,
           firstName: data.firstName,
           id: res.user.uid,
+          type: data.type,
           createdAt: firebase.firestore.FieldValue.serverTimestamp()
         };
         await firebase.firestore().collection('/users').doc(res.user.uid).set(userData);
@@ -32,6 +26,7 @@ export const signup = (data: SignUpData, onError: () => void): ThunkAction<void,
           payload: userData
         });
       }
+      console.log(data)
     } catch (err) {
       console.log(err);
       onError();
@@ -76,6 +71,7 @@ export const signin = (data: SignInData, onError: () => void): ThunkAction<void,
   return async dispatch => {
     try {
       await firebase.auth().signInWithEmailAndPassword(data.email, data.password);
+      console.log(data)
     } catch (err) {
       console.log(err);
       onError();
