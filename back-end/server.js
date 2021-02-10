@@ -1,48 +1,40 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require('dotenv').config()
-
+require("dotenv").config();
+const { db } = require("./models/indexdb");
 const app = express();
-
+const memerout = require("./routes/membersroute");
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8081",
 };
 
 app.use(cors());
 
 // parse requests of content-type - application/json
-app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.json({ limit: "50mb" }));
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ limit: '50mb',extended: true }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
+//setup connection to database
+db.authenticate()
+  .then(() =>
+    console.log(
+      "Connection has been established successfully to shecodeafrica database."
+    )
+  )
+  .catch((err) =>
+    console.log("Unable to connect to the shecodeafrica database:" + err)
+  );
+// use the root
+app.use("/", memerout);
 
-////////
-
-const db = require("./models");
-db.sequelize.sync()
-.then(() => {
-  console.log("Database connected !")
-})
-.catch(() => {
-  console.log("error while connection to db")
-})
-
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
-////
-
-// simple route for testing
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to 'she codes africa' application. this is a GET route for test" });
-});
-////We also need to include routes in server.js (right before app.listen()):
-require("./routes/members.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+  console.log(
+    `listening on port ${PORT} and To get started, visit: http://localhost:3000`
+  );
 });
