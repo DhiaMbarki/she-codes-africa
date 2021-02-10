@@ -42,7 +42,7 @@ class NavigationBar extends React.Component {
      <LinkContainer to="/events">
      <Nav.Link >Upcoming events</Nav.Link>
      </LinkContainer> 
-     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+     <NavDropdown  title="Dropdown" id="dropdown-menu-align-left">
      <LinkContainer to="/">
      <NavDropdown.Item >View profile</NavDropdown.Item>
      </LinkContainer>
