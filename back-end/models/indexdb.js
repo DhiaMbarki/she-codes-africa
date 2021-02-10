@@ -1,5 +1,5 @@
 const dbConfig = require("../config/db.config.js");
-const {Sequelize} = require("sequelize");
+const { Sequelize } = require("sequelize");
 const db = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
@@ -9,8 +9,6 @@ const db = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     acquire: dbConfig.pool.acquire,
     idle: dbConfig.pool.idle,
   },
-}); 
-
-
+});
 
 module.exports.db = db;
