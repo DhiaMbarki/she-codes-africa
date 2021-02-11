@@ -16,21 +16,25 @@ import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
 
 import NavigationBar from "./components/pages/navigation";
-
-import Header from "./components/sections/Header";
 import ForgotPassword from "./components/pages/ForgotPassword";
 import Dashboard from "./components/pages/Dashboard";
 import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
+
+import ViewJobs  from './components/Jobs/viewJobs'
+import JOBDetails  from './components/Jobs/jobDetail'
+import CodingResources from './components/codingResources/codingResources'
+
+
 import firebase from "./firebase/config";
 
 import {
   getUserById,
   setLoading,
   setNeedVerification,
-} from "./store/actions/authActions";
-import { RootState } from "./store";
+} from "./redux/actions/authActions";
+import { RootState } from "./redux/index";
 
 import "./App.css";
 
@@ -68,14 +72,25 @@ const App: FC = () => {
         <NavigationBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <PublicRoute path="/signup" component={SignUp} exact />
-        <PublicRoute path="/signin" component={SignIn} exact />
-        <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
-        <PublicRoute path="/dashboard" component={Dashboard} exact />
-
+          <Route path="/about" component={About} />
           <Route path="/donate" component={Donate} />
+          <PublicRoute path="/signup" component={SignUp} exact />
+          <PublicRoute path="/signin" component={SignIn} exact />
+          <PublicRoute
+            path="/forgot-password"
+            component={ForgotPassword}
+            exact
+          />
+          <PrivateRoute path="/dashboard" component={Dashboard} exact />
           <Route exact path="/viewprofile" component={Viewprofile} />
           <Route exact path="/editProfile" component={EditProfile} />
+
+          <Route exact path="/viewJobs" component={ViewJobs} />
+          <Route path="/viewJobs/:id" children={<JOBDetails/>} />
+
+          <Route exact path="/codingResources" component={CodingResources} />
+
+
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />

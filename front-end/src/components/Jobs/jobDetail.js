@@ -21,7 +21,7 @@ function JOBDetails() {
           <MDBRow>
               <MDBCol class="w-75 p-3">
               <p className="text-justify font-weight-normal">
-              Full Time / Singapore
+              Full Time / Singapore {id}
 Full Stack Developer - Building next-gen products and architecture
 Equinix is the world’s digital infrastructure company, operating 210 data centers across the globe and providing interconnections to all the key clouds and networks. Businesses need one place to simplify and bring together fragmented, complex infrastructure that spans private and public cloud environments. Our global platform allows customers to place infrastructure wherever they need it and connect it to everything they need to succeed.
 

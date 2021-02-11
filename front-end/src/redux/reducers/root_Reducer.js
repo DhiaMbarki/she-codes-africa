@@ -1,9 +1,7 @@
 import { combineReducers } from "redux";
 import authReducer from "./authReducer";
 import editProfileReducer from "./editProfileReducer";
-
 import blogReducer from "./blogsReducer";
-
 import eventReducer from "./eventsReducer";
 
 export default combineReducers({
