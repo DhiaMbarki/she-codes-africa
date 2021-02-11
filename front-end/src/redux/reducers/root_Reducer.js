@@ -4,6 +4,9 @@ import editProfileReducer from "./editProfileReducer";
 import blogReducer from "./blogsReducer";
 import eventReducer from "./eventsReducer";
 
+
+
+
 export default combineReducers({
   events: eventReducer,
   auth: authReducer,
