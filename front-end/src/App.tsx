@@ -21,6 +21,11 @@ import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 
+import ViewJobs  from './components/pages/viewJobs'
+import JOBDetails  from './components/pages/jobDetail'
+import CodingResources from './components/pages/codingResources'
+
+
 import firebase from "./firebase/config";
 import {
   getUserById,
@@ -54,8 +59,8 @@ const App: FC = () => {
       unsubscribe();
     };
   }, [dispatch]);
-  
-  if(loading) {
+
+  if (loading) {
     return <Loader />;
   }
 
@@ -64,19 +69,30 @@ const App: FC = () => {
       <div>
         <NavigationBar />
         <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/donate" component={Donate} />
-        <PublicRoute path="/signup" component={SignUp} exact />
-        <PublicRoute path="/signin" component={SignIn} exact />
-        <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
-        <PrivateRoute path="/dashboard" component={Dashboard} exact />
-        <Route exact path="/viewprofile" component={Viewprofile} />
-        <Route exact path="/editProfile" component={EditProfile} />
-        <Route exact path="/events" component={Events} />
-        <Route path="/events/:id" children={<EventDetails />} />
-        <Route exact path="/blogs" component={Blogs} />
-        <Route path="/blogs/:id" children={<BlogDetails />} />
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/donate" component={Donate} />
+          <PublicRoute path="/signup" component={SignUp} exact />
+          <PublicRoute path="/signin" component={SignIn} exact />
+          <PublicRoute
+            path="/forgot-password"
+            component={ForgotPassword}
+            exact
+          />
+          <PrivateRoute path="/dashboard" component={Dashboard} exact />
+          <Route exact path="/viewprofile" component={Viewprofile} />
+          <Route exact path="/editProfile" component={EditProfile} />
+
+          <Route exact path="/viewJobs" component={ViewJobs} />
+          <Route path="/viewJobs/:id" children={<JOBDetails/>} />
+
+          <Route exact path="/codingResources" component={CodingResources} />
+
+
+          <Route exact path="/events" component={Events} />
+          <Route path="/events/:id" children={<EventDetails />} />
+          <Route exact path="/blogs" component={Blogs} />
+          <Route path="/blogs/:id" children={<BlogDetails />} />
         </Switch>
 
         <footer>
