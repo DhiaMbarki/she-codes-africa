@@ -14,64 +14,45 @@ import {
   TwitterIcon,
 } from "react-share";
 
+import { useSelector } from 'react-redux';
+
+
 function BlogDetails() {
   // We can use the `useParams` hook here to access
   // the dynamic pieces of the URL.
   let { id } = useParams();
   const [active, setActive] = useState(false);
-
+  const blog = useSelector((state) => {return state.blogs.filter(x=>{return (x.author === id)})[0]})
+  console.log('id',id)
+  console.log(blog)
   return (
     <div style={{ padding: "50px" }}>
       <MDBContainer>
         <h1 className="font-weight-bolder">
-          Zoom Hero Image on Scroll ID: {id}
+        {blog.title}
         </h1>
-        <p className="font-weight-light">Writer: Foulen</p>
+        <p className="font-weight-light">Writer: {blog.author}</p>
 
-        <figure className="figure text-justify">
+        <figure className="text-justify font-weight-normal">
           <img
             src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20(73).jpg"
-            alt=""
+            alt=",,,"
+            className="text-justify font-weight-normal"
           />
-          <figcaption className="figure-caption">
-            A caption for the above image.
-          </figcaption>
         </figure>
         <div class="content">
-          <a
-            href="http://webdesignerwall.com/tutorials/how-to-add-icon-fonts-to-any-element-with-css"
-            alt="webdesignerwall.com"
-            target="_blank"
-          >
-            View Tutorial
-          </a>
           <p className="text-justify font-weight-normal">
-            Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus
-            sit amet fermentum. Donec sed odio operae, eu vulputate felis
-            rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc
-            posthac, sitientis piros Afros. Petierunt uti sibi concilium totius
-            Galliae in diem certam indicere. Cras mattis iudicium purus sit amet
-            fermentum. Ambitioni dedisse scripsisse iudicaretur. Cras mattis
-            iudicium purus sit amet fermentum. Donec sed odio operae, eu
-            vulputate felis rhoncus. Praeterea iter est quasdam res quas ex
-            communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti
-            sibi concilium totius Galliae in diem certam indicere. Cras mattis
-            iudicium purus sit amet fermentum. Ambitioni dedisse scripsisse
-            iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec
-            sed odio operae, eu vulputate felis rhoncus. Praeterea iter est
-            quasdam res quas ex communi. At nos hinc posthac, sitientis piros
-            Afros. Petierunt uti sibi concilium totius Galliae in diem certam
-            indicere. Cras mattis iudicium purus sit amet fermentum.
+          {blog.text}
           </p>
           <footer>
             <p>
               A{" "}
               <a
-                href="http://www.webdeisgnerwall.com"
+                href={blog.link}
                 alt="web designer wall"
                 target="_blank"
               >
-                webdesignerwall.com
+                View Resource
               </a>{" "}
               Tutorial
             </p>

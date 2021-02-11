@@ -1,65 +1,68 @@
-const Sequelize = require("sequelize");
-const { db } = require("./indexdb");
+const Sequelize = require('sequelize');
+const { db } = require('./indexdb');
 
 const Memberstable = db.define("Memberstable", {
   IdFb: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   PhotosprofileUrl: {
-    type: Sequelize.TEXT("long"),
+    type: Sequelize.STRING
+  },
+  CLoudinary_id: {
+    type: Sequelize.STRING
   },
   Firstname: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Lastname: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
-  DateOfBirth: {
-    type: Sequelize.STRING,
+  DateOfBirth : {
+    type: Sequelize.STRING
   },
-  Biography: {
-    type: Sequelize.STRING,
+  Biography:{
+    type: Sequelize.STRING
   },
   Location: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING 
   },
   Githubacountlink: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Linkedincountlink: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Websiteurl: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Engineeringareas: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
-  Gender: {
-    type: Sequelize.STRING,
+  Gender:{
+    type: Sequelize.STRING
   },
-
+ 
   Howcanwehelpyousucced: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Companyname: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Jobtitle: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   YearsOfexperience: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.INTEGER
   },
   Codingstackinuse: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   Codingstacktolearn: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
-});
+  });
 
-Memberstable.sync().then(() => {
-  console.log("Memberstable  is   created  in shecodeafricaDB with succ !!");
-});
-module.exports = Memberstable;
+  Memberstable.sync().then(() => {
+  console.log('Memberstable  is   created  in shecodeafricaDB with succ !!');
+})
+  module.exports=Memberstable;
