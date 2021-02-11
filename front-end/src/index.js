@@ -9,19 +9,19 @@ import { createStore } from "redux";
 import rootReducer from "./redux/reducers/root_Reducer";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { ChakraProvider } from "@chakra-ui/react";
+
+
 import "./firebase/config";
 import "./firebase/config";
 import "bulma/css/bulma.min.css";
 import store from "./store";
 
+
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
       <Provider store={store}>
-        <ChakraProvider>
           <App />
-        </ChakraProvider>
       </Provider>
     </React.StrictMode>
   </BrowserRouter>,
