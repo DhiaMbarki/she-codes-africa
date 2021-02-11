@@ -21,9 +21,9 @@ import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 
-import ViewJobs  from './components/pages/viewJobs'
-import JOBDetails  from './components/pages/jobDetail'
-import CodingResources from './components/pages/codingResources'
+import ViewJobs  from './components/Jobs/viewJobs'
+import JOBDetails  from './components/Jobs/jobDetail'
+import CodingResources from './components/codingResources/codingResources'
 
 
 import firebase from "./firebase/config";
