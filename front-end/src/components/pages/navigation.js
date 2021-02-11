@@ -45,8 +45,11 @@ class NavigationBar extends React.Component {
                   <LinkContainer to="/editProfile">
                     <NavDropdown.Item>Edit profile</NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/">
+                  <LinkContainer to="/viewJobs">
                     <NavDropdown.Item>View jobs</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/codingResources">
+                    <NavDropdown.Item>Coding Resources</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/">
                     <NavDropdown.Item>Webinar</NavDropdown.Item>
