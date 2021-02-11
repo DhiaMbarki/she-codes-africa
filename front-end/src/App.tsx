@@ -14,8 +14,17 @@ import EditProfile from "./components/profile/editProfile";
 import Viewprofile from "./components/profile/viewProfile";
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
+
 import NavigationBar from "./components/pages/navigation";
+
+import Header from "./components/sections/Header";
+import ForgotPassword from "./components/pages/ForgotPassword";
+import Dashboard from "./components/pages/Dashboard";
+import PrivateRoute from "./components/auth/privateRoute";
+import PublicRoute from "./components/auth/PublickRoute";
+import Loader from "./components/UI/Loader";
 import firebase from "./firebase/config";
+
 import {
   getUserById,
   setLoading,
@@ -36,7 +45,7 @@ const App: FC = () => {
     const unsubscribe = firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         dispatch(setLoading(true));
-        dispatch(getUserById(user.uid));
+        await dispatch(getUserById(user.uid));
         if (!user.emailVerified) {
           dispatch(setNeedVerification());
         }
@@ -49,15 +58,20 @@ const App: FC = () => {
     };
   }, [dispatch]);
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <Router>
       <div>
         <NavigationBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/signIn" component={SignIn} />
-          <Route path="/signUp" component={SignUp} />
+          <PublicRoute path="/signup" component={SignUp} exact />
+        <PublicRoute path="/signin" component={SignIn} exact />
+        <PublicRoute path="/forgot-password" component={ForgotPassword} exact />
+        <PublicRoute path="/dashboard" component={Dashboard} exact />
 
           <Route path="/donate" component={Donate} />
           <Route exact path="/viewprofile" component={Viewprofile} />
