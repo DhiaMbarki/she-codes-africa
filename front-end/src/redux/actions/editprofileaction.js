@@ -1,4 +1,4 @@
-// import {ADD_PROFILE}   from './eventTypes'
+ import {ADD_PROFILE}   from './eventTypes'
 //  const addprofileaction = ({ PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl}) => ({
 //     type: ADD_PROFILE,
 //     payload: {
