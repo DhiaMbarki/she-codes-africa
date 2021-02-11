@@ -1,5 +1,5 @@
-import ADD_PROFILE from './eventTypes'
-export const addprofileaction = ({ PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl}) => ({
+import {ADD_PROFILE}   from './eventTypes'
+ const addprofileaction = ({ PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl}) => ({
     type: ADD_PROFILE,
     payload: {
         PhotosprofileUrl,
@@ -11,3 +11,4 @@ export const addprofileaction = ({ PhotosprofileUrl ,Firstname, Biography,Github
     },
   });
   
+  export default addprofileaction
