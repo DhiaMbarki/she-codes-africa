@@ -1,5 +1,5 @@
-import addProfileAction from "../actions/editProfileAction";
 import { ADD_PROFILE } from "../actions/editProfileTypes";
+
 const initialState = {
   PhotosprofileUrl: "",
   Firstname: "",
