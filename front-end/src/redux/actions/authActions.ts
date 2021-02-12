@@ -3,6 +3,7 @@ import { SignUpData, AuthAction, SET_USER, User, SET_LOADING, SIGN_OUT, SignInDa
 import { RootState } from '..';
 import firebase from '../../firebase/config';
 
+
 // Create user
 export const signup = (data: SignUpData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
   return async dispatch => {
@@ -40,6 +41,7 @@ export const signup = (data: SignUpData, onError: () => void): ThunkAction<void,
 
 // Get user by id
 export const getUserById = (id: string): ThunkAction<void, RootState, null, AuthAction> => {
+
   return async dispatch => {
     try {
       const user = await firebase.firestore().collection('users').doc(id).get();
@@ -70,8 +72,16 @@ export const setLoading = (value: boolean): ThunkAction<void, RootState, null, A
 export const signin = (data: SignInData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
   return async dispatch => {
     try {
-      await firebase.auth().signInWithEmailAndPassword(data.email, data.password);
-      console.log(data)
+      await firebase.auth().signInWithEmailAndPassword(data.email, data.password)
+      // console.log(data.email)
+      .then((userCredential) => {
+        // Signed in
+        console.log(userCredential.user);
+        
+        
+        //var user = userCredential.user;
+        // ...
+      })
     } catch (err) {
       console.log(err);
       onError();

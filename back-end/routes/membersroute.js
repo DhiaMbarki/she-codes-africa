@@ -9,7 +9,6 @@ const cloud = require("../config/CLoudinaryconfi")
 router.post('/editprofile', multermiddel, async (req, res) => {
     try {
         const result = await cloud.uploads(req.body.PhotosprofileUrl)
-        console.log("resultfromcloudnery", result)
         var PhotosprofileUrlCL = result.ImageUrl;
         var CLoudinary_idCL = result.id;
          const dts = { IdFb:req.body.IdFb ,PhotosprofileUrl:PhotosprofileUrlCL, CLoudinary_id:CLoudinary_idCL, 
