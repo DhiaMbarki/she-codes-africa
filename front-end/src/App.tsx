@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { useDispatch, useSelector } from "react-redux";
 //IMPORTING ALL THE COMPONENTS
+import Home from "./components/pages/home";
 import Donate from "./components/pages/donate";
 import About from "./components/pages/about";
 import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/Blogs";
-import EditProfile from "./components/profile/editProfile";
-import Viewprofile from "./components/profile/viewProfile";
-// import BlogDetails from "./components/blogs/blogDetail";
+import EditProfile from "./components/profile/EditProfile";
+import Viewprofile from "./components/profile/ViewProfile";
+import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
-
 import NavigationBar from "./components/pages/navigation";
 import ForgotPassword from "./components/pages/ForgotPassword";
 import Dashboard from "./components/pages/Dashboard";
@@ -21,18 +21,15 @@ import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 
+
+import AddBlogs from "./components/blogs/AddBlogs";
+
+
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import Home from "./components/pages/Home";
-import AddBlogs from "./components/blogs/AddBlogs";
-import Blog from "./components/blogs/Blog";
-import Navbar from "./components/elemnts/Navbar";
 
 import firebase from "./firebase/config";
-
 import {
   getUserById,
   setLoading,
@@ -53,7 +50,7 @@ const App: FC = () => {
     const unsubscribe = firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         dispatch(setLoading(true));
-        await dispatch(getUserById(user.uid));
+        dispatch(getUserById(user.uid));
         if (!user.emailVerified) {
           dispatch(setNeedVerification());
         }
@@ -71,14 +68,14 @@ const App: FC = () => {
   }
 
   return (
-    // <Provider store={store}>
-
     <Router>
       <div>
         <NavigationBar />
-        <Navbar />
-
         <Switch>
+          <Route exact path="/" component={Home} />
+
+          <Route exact path="/addBlogs" component={AddBlogs} />
+
           <Route path="/about" component={About} />
           <Route path="/donate" component={Donate} />
           <PublicRoute path="/signup" component={SignUp} exact />
@@ -92,19 +89,6 @@ const App: FC = () => {
           <Route exact path="/viewprofile" component={Viewprofile} />
           <Route exact path="/editProfile" component={EditProfile} />
 
-         
-
-
-
-
-            <Route exact path="/" component={Home} />
-            <Route exact path="/addPost" component={AddBlogs} />
-            <Route exact path="/post/:id" component={Blog} />
-         
-
-
-
-
           <Route exact path="/viewJobs" component={ViewJobs} />
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
@@ -113,7 +97,7 @@ const App: FC = () => {
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
-          {/* <Route path="/blogs/:id" children={<BlogDetails />} /> */}
+          <Route path="/blogs/:id" children={<BlogDetails />} />
         </Switch>
 
         <footer>
@@ -131,7 +115,6 @@ const App: FC = () => {
         </footer>
       </div>
     </Router>
-    // </Provider>
   );
 };
 

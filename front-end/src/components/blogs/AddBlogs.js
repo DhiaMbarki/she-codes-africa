@@ -15,6 +15,7 @@ const AddBlogs = () => {
       title: title,
       body: body,
     };
+    
 
     dispatch(createPost(new_post));
     history.push("/");
