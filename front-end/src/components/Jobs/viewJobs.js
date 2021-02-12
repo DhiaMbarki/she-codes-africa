@@ -1,19 +1,12 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
+
 // import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
+
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Redirect, Link } from "react-router-dom";
 
@@ -147,7 +140,7 @@ var dummy = [
 ];
 
 export default function ViewJobs() {
-  const classes = useStyles(dummy);
+  //const classes = useStyles(dummy);
 
   const readArticle = (e) => {
     console.log(e);
@@ -178,7 +171,7 @@ export default function ViewJobs() {
                   <p className="font-weight-normal">Company X</p>
                 </MDBBox>
                 <Link to={`/viewJobs/${index}`}>
-                <MDBBtn color="primary">More details</MDBBtn>
+                <MDBBtn color="primary" onClick = {()=>readArticle(index)}>More details</MDBBtn>
                 </Link>
               </MDBCol>
             </MDBRow>

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../UI/input';
 import Button from '../UI/Button';
 import Message from '../UI/Message';
-import { sendPasswordResetEmail, setError, setSuccess } from '../../store/actions/authActions';
-import { RootState } from '../../store';
+import { sendPasswordResetEmail, setError, setSuccess } from '../../redux/actions/authActions';
+import { RootState } from '../../redux/index';
 
 const ForgotPassword: FC = () => {
   const [email, setEmail] = useState('');

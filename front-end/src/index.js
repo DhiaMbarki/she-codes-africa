@@ -5,18 +5,20 @@ import App from "./App";
 import store from "./redux/store";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { ChakraProvider } from "@chakra-ui/react";
+
+
+
 import "./firebase/config";
 import "./firebase/config";
 import "bulma/css/bulma.min.css";
+
+
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
       <Provider store={store}>
-        <ChakraProvider>
           <App />
-        </ChakraProvider>
       </Provider>
     </React.StrictMode>
   </BrowserRouter>,
