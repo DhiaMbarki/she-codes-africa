@@ -36,7 +36,9 @@ class MemberBoard extends Component {
           <LinkContainer to="/">
             <NavDropdown.Item>Webinar</NavDropdown.Item>
           </LinkContainer>
+          <LinkContainer to="/">
           <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
+          </LinkContainer>
         </NavDropdown>
       </Nav>
     );
