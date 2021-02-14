@@ -1,15 +1,14 @@
 // Home.js
 
-import React, { Component } from "react";
+import React from "react";
+import classNames from "classnames";
+import slides from "./homeSlides";
+import "./Home.scss";
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Home</h2>
-      </div>
-    );
-  }
+class home extends React.Component {
+
+   
+  
 }
 
-export default Home;
+export default home;
