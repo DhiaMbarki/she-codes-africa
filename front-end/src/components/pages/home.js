@@ -5,6 +5,7 @@ import classNames from "classnames";
 import slides from "./homeSlides";
 import "./Home.scss";
 
+
 class home extends React.Component {
   constructor(props) {
     super(props);
@@ -96,8 +97,17 @@ class home extends React.Component {
           className="slider__control slider__control--right"
           onClick={() => this.changeSlides(1)}
         />
+
+       
       </div>
+       
+
+
+
+
+                  
     );
+    
   }
 }
 

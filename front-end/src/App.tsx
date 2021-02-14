@@ -20,6 +20,10 @@ import Dashboard from "./components/pages/Dashboard";
 import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
+import NavHome from "./components/pages/NavHome";
+import HeaderHome from "./components/pages/HeaderHome";
+
+
 
 
 import AddBlogs from "./components/blogs/AddBlogs";
@@ -43,7 +47,15 @@ const App: FC = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state: RootState) => state.auth);
 
+  
+
   // Check if user exists
+
+
+
+
+
+
 
   useEffect(() => {
     dispatch(setLoading(true));
@@ -66,14 +78,26 @@ const App: FC = () => {
   if (loading) {
     return <Loader />;
   }
+  
 
   return (
+
     <Router>
       <div>
         <NavigationBar />
         <Switch>
-          <Route exact path="/" component={Home} />
 
+        <div>
+
+        
+
+          <Route exact path="/" component={Home} />
+          
+          <Route exact path="/" component={NavHome} />
+        <Route exact path="/" component={HeaderHome} />
+
+ 
+          </div>
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />
@@ -115,7 +139,12 @@ const App: FC = () => {
         </footer>
       </div>
     </Router>
+
   );
+  
+  
+  
 };
+
 
 export default App;
