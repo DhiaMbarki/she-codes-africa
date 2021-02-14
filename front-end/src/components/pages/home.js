@@ -54,7 +54,6 @@ class home extends React.Component {
     const { activeSlide, prevSlide, sliderReady } = this.state;
     return (
       <div className={classNames("slider", { "s--ready": sliderReady })}>
-        <p className="slider__top-heading">Travelers</p>
         <div className="slider__slides">
           {this.state.slides.map((slide, index) => (
             <div
