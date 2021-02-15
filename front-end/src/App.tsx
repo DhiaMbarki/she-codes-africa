@@ -22,6 +22,7 @@ import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 import NavHome from "./components/pages/NavHome";
 import HeaderHome from "./components/pages/HeaderHome";
+import section from "./components/pages/section";
 
 
 
@@ -87,17 +88,18 @@ const App: FC = () => {
         <NavigationBar />
         <Switch>
 
-        <div>
-
         
 
-          <Route exact path="/" component={Home} />
-          
+        <div>
+
           <Route exact path="/" component={NavHome} />
         <Route exact path="/" component={HeaderHome} />
+        <Route exact path="/" component={section} />
+        <Route exact path="/" component={Home} />  
 
+        </div>
  
-          </div>
+         
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />

@@ -21,7 +21,7 @@ $letterStagger: 0.1s;
 .slider {
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: 50vh;
   color: #fff;
 
   @mixin sliderReady {
