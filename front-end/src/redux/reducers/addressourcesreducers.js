@@ -1,4 +1,4 @@
-import { ADD_RESSOURCE}from "../actions/eventTypes";
+import { ADD_RESSOURCE}from "../actions/addressourcesTypes";
 
 const initialState = {
     article : []

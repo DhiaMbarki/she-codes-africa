@@ -21,13 +21,13 @@ class AdminBoard extends Component {
           <Nav.Link>Upcoming events</Nav.Link>
         </LinkContainer>
         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-          <LinkContainer to="/viewprofile">
+          <LinkContainer to="/addAdmin">
             <NavDropdown.Item>Add Admin</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to="/editProfile">
+          <LinkContainer to="/addBlogs">
             <NavDropdown.Item>Add Blog</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to="/viewJobs">
+          <LinkContainer to="/addEvents">
             <NavDropdown.Item>Add Event</NavDropdown.Item>
           </LinkContainer>
           <LinkContainer to="/addCodingResources">
@@ -37,7 +37,7 @@ class AdminBoard extends Component {
             <NavDropdown.Item>Webinar</NavDropdown.Item>
           </LinkContainer>
           <LinkContainer to="/">
-          <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
+            <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
           </LinkContainer>
         </NavDropdown>
       </Nav>

@@ -10,8 +10,8 @@ import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/blogs";
-import EditProfile from "./components/profile/EditProfile";
-import ViewProfile from "./components/profile/ViewProfile";
+// import EditProfile from "./components/profile/EditProfile";
+// import ViewProfile from "./components/profile/ViewProfile";
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
 import NavigationBar from "./components/pages/navigation";
@@ -20,11 +20,13 @@ import Dashboard from "./components/pages/Dashboard";
 import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
+import ViewJobs from "./components/Jobs/viewJobs";
+import JOBDetails from "./components/Jobs/jobDetail";
+import CodingResources from "./components/codingResources/codingResources";
+//admin access
+import PostEvent from "./components/events/addEvents";
+import PostBlog from "./components/blogs/addBlogs";
 import addCodingressource from "../src/components/codingResources/addCodingressource";
-import ViewJobs  from './components/Jobs/viewJobs'
-import JOBDetails  from './components/Jobs/jobDetail'
-import CodingResources from './components/codingResources/codingResources'
-
 
 import firebase from "./firebase/config";
 import {
@@ -80,18 +82,21 @@ const App: FC = () => {
             exact
           />
           <PrivateRoute path="/dashboard" component={Dashboard} exact />
-          <Route exact path="/viewprofile" component={ViewProfile} />
-          <Route exact path="/editProfile" component={EditProfile} />
+          {/* <Route exact path="/viewprofile" component={ViewProfile} />
+          <Route exact path="/editProfile" component={EditProfile} /> */}
 
           <Route exact path="/viewJobs" component={ViewJobs} />
-          <Route path="/viewJobs/:id" children={<JOBDetails/>} />
+          <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
           <Route exact path="/codingResources" component={CodingResources} />
-        <Route path="/addCodingResources" component={addCodingressource} />
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
           <Route path="/blogs/:id" children={<BlogDetails />} />
+
+          <Route exact path="/addEvents" component={PostEvent} />
+          <Route exact path="/addBlogs" component={PostBlog} />
+          <Route path="/addCodingResources" component={addCodingressource} />
         </Switch>
 
         <footer>
@@ -113,3 +118,16 @@ const App: FC = () => {
 };
 
 export default App;
+
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="textSecondary" align="center">
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://material-ui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }

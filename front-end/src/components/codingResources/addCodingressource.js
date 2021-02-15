@@ -31,21 +31,8 @@ class addCodingressource extends Component {
       Level: this.state.Level,
       Format: this.state.Format,
     })
-      .then((response) => {
+      .then(() => {
         alert("Ressources is  Saved with succes");
-        //console.log(response.ReSv);
-        //let arrayResv= [];
-        // arrayResv.push(response.ReSv);
-         //console.log(arrayResv)
-      //this.props.addnewressource(arrayResv);
-     // console.log(this.props)
-        //this.props.addnewressource(arrayres1);
-        //  response.ReSv.Title,
-        // response.ReSv.Link,
-        //response.ReSv.Topic,
-        //response.ReSv.Level,
-        // response.ReSv.Format
-        //);
       })
       .catch((error) => {
         console.log("Error from Server side:", error);
