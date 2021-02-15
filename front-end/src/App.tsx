@@ -25,6 +25,7 @@ import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
 //admin access 
 import PostEvent from "./components/events/addEvents";
+import PostBlog from "./components/blogs/addBlogs"
  
 import firebase from "./firebase/config";
 import {
@@ -94,6 +95,9 @@ const App: FC = () => {
           <Route path="/blogs/:id" children={<BlogDetails />} />
 
           <Route exact path="/addEvents" component={PostEvent} />
+          <Route exact path="/addBlogs" component={PostBlog} />
+
+          
         </Switch>
 
         <footer>

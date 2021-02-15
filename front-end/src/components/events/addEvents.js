@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createEvent } from "../../redux/actions/eventAction";
+import { Button,Form} from "react-bootstrap";
 
 class PostEvent extends Component {
   constructor(props) {
@@ -37,12 +38,26 @@ class PostEvent extends Component {
 
     this.props.createEvent(event);
   }
+  fileSelecHandler(event) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        this.setState({ Profilelimage: reader.result });
+      }
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
 
   render() {
     return (
       <div>
         <h1>Add Event</h1>
-        <form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit}>
+        
+        <Form.Group >
+           <Form.File id="exampleFormControlFile1"  onChange={this.fileSelecHandler} />
+           </Form.Group>
           <div>
             <label>Title: </label>
             <br />
@@ -99,8 +114,8 @@ class PostEvent extends Component {
             />
           </div>
 
-          <button type="submit">Submit</button>
-        </form>
+          <Button type="submit">Submit</Button>
+        </Form>
       </div>
     );
   }
