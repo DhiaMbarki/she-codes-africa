@@ -134,6 +134,8 @@ class Slideshow extends React.Component {
     }
     render() {
       return (
+        <section id="projects">
+
         <div className="slide">
           <div className="slide__decorative-sidebar">
             <img src={this.props.image} />
@@ -210,6 +212,7 @@ class Slideshow extends React.Component {
             </span>
           </div>
         </div>
+        </section>
       );
     }
   }

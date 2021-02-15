@@ -4,13 +4,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  z-index: 3;
+
 }
 
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   background: #000;
   background: #fafafa url(../HomeImage/Author_BG.jpg) center right no-repeat;
-
 }
 
 $numOfParts: 4;
@@ -23,7 +24,7 @@ $letterStagger: 0.1s;
 .slider {
   overflow: hidden;
   position: relative;
-  height: 50vh;
+  height: 60vh;
   color: #fff;
 
   @mixin sliderReady {

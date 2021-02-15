@@ -54,6 +54,9 @@ class home extends React.Component {
   render() {
     const { activeSlide, prevSlide, sliderReady } = this.state;
     return (
+      <section id="projects">
+
+
       <div className={classNames("slider", { "s--ready": sliderReady })}>
         <div className="slider__slides">
           {this.state.slides.map((slide, index) => (
@@ -101,7 +104,7 @@ class home extends React.Component {
        
       </div>
        
-
+</section>
 
 
 
