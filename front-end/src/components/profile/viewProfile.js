@@ -56,8 +56,7 @@ var fakeEvents = [
       "Do you work in tech? Do you have a technical background? Are you interested in tech with the way the world is changing and how we can use technology to sell? If this is you then The Women in Tech Mastermind Group is for you!",
   },
 ];
-// import { Button, ButtonGroup } from "@chakra-ui/react";
-// import { Text } from "@chakra-ui/react";
+
 
 export default function ViewProfile() {
   let history = useHistory();

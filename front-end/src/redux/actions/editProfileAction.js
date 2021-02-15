@@ -1,12 +1,12 @@
 import { ADD_PROFILE } from "./editProfileTypes";
-const addProfileAction = ({
+const addProfileAction = (
   PhotosprofileUrl,
   Firstname,
   Biography,
   Githubacountlink,
   Linkedincountlink,
-  Websiteurl,
-}) => ({
+  Websiteurl
+) => ({
   type: ADD_PROFILE,
   payload: {
     PhotosprofileUrl,

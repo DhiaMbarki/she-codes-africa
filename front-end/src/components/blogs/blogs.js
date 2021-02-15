@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Blogs() {
 
   const blogs = useSelector((state) => {return state.blogs})
-  console.log(blogs)
+
 
   const classes = useStyles(blogs);
 

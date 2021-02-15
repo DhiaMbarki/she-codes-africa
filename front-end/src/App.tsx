@@ -10,8 +10,8 @@ import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Events from "./components/events/events";
 import Blogs from "./components/blogs/blogs";
-import EditProfile from "./components/profile/editProfile";
-import Viewprofile from "./components/profile/viewProfile";
+import EditProfile from "./components/profile/EditProfile";
+import ViewProfile from "./components/profile/ViewProfile";
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
 import NavigationBar from "./components/pages/navigation";
@@ -80,7 +80,7 @@ const App: FC = () => {
             exact
           />
           <PrivateRoute path="/dashboard" component={Dashboard} exact />
-          <Route exact path="/viewprofile" component={Viewprofile} />
+          <Route exact path="/viewprofile" component={ViewProfile} />
           <Route exact path="/editProfile" component={EditProfile} />
 
           <Route exact path="/viewJobs" component={ViewJobs} />
