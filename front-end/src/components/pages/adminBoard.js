@@ -30,7 +30,7 @@ class AdminBoard extends Component {
           <LinkContainer to="/viewJobs">
             <NavDropdown.Item>Add Event</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to="/codingResources">
+          <LinkContainer to="/addCodingResources">
             <NavDropdown.Item>Add Coding Resources</NavDropdown.Item>
           </LinkContainer>
           <LinkContainer to="/">

@@ -22,8 +22,8 @@ import { connect } from "react-redux";
 import addprofileaction from "../../redux/actions/editProfileAction";
 import store from "../../redux/store";
 class EditProfile extends Component {
-  constructor(propos) {
-    super(propos);
+  constructor(props) {
+    super(props);
     this.state = {
       Profilelimage:
         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",

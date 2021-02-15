@@ -5,7 +5,7 @@ require('dotenv').config()
 const { db } = require("./models/indexdb")
 const app = express();
 const memerout = require("./routes/membersroute")
-
+const cdressr=require("./routes/codingresourcesroute")
 
 //var corsOptions = {
   //origin: "http://localhost:8081"
@@ -30,7 +30,7 @@ db.authenticate()
 app.use('/images', express.static('Images'))
 // use the root 
 app.use("/", memerout);
-
+app.use("/",cdressr);
 // set port, listen for requests
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
