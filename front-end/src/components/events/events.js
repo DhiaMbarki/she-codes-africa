@@ -13,7 +13,6 @@ import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
-import FakeEvents from "../events/fakeEvents";
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -62,7 +61,7 @@ export default function Events() {
       <CssBaseline />
       <AppBar position="relative"></AppBar>
       <main>
-        {/* Hero unit */}
+        
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography

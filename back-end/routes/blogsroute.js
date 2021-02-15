@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Blogs = require("../models/blogs.model");
 const multermiddel = require("../middelware/multer");
-const cloudinary = require("cloudinary");
 const cloud = require("../config/CLoudinaryconfi");
 
 router.post("/createBLogs", multermiddel, async (req, res) => {

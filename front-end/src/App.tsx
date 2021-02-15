@@ -23,10 +23,11 @@ import Loader from "./components/UI/Loader";
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
-//admin access 
+//admin access
 import PostEvent from "./components/events/addEvents";
-import PostBlog from "./components/blogs/addBlogs"
- 
+import PostBlog from "./components/blogs/addBlogs";
+import addCodingressource from "../src/components/codingResources/addCodingressource";
+
 import firebase from "./firebase/config";
 import {
   getUserById,
@@ -88,7 +89,6 @@ const App: FC = () => {
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
           <Route exact path="/codingResources" component={CodingResources} />
-
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
@@ -96,8 +96,7 @@ const App: FC = () => {
 
           <Route exact path="/addEvents" component={PostEvent} />
           <Route exact path="/addBlogs" component={PostBlog} />
-
-          
+          <Route path="/addCodingResources" component={addCodingressource} />
         </Switch>
 
         <footer>

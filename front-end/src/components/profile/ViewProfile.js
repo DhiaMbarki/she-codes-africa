@@ -1,11 +1,11 @@
 import React from "react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import { Text } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import { Button} from "react-bootstrap";
 
 function ViewProfile(props) {
   let history = useHistory();
+  console.log(props)
   function handleClick() {
     history.push("/EditProfile");
   }
@@ -21,23 +21,23 @@ function ViewProfile(props) {
           height="300"
         ></img>
         <br></br>
-        <Text id="lable" fontSize="3xl" as="samp" color="black" as="cite">
+        <p id="lable" fontSize="3xl" as="samp" color="black" as="cite">
           Name
-        </Text>
+        </p>
         <br></br>
-        <Text id="name" fontSize="2xl" as="samp" color="black" as="samp">
+        <p id="name" fontSize="2xl" as="samp" color="black" as="samp">
           {props.datas.editProfile.Firstname}
-        </Text>
+        </p>
         <br></br>
       </div>
       <div className="aboutme">
-        <Text fontSize="3xl" color="black" as="cite">
+        <p fontSize="3xl" color="black" as="cite">
           About me
-        </Text>
+        </p>
         <br></br>
-        <Text fontSize="lg" as="em">
+        <p fontSize="lg" as="em">
           {props.datas.editProfile.Biography}
-        </Text>
+        </p>
         <div className="link">
           <a href={props.datas.editProfile.Githubacountlink}>
             <img
@@ -79,7 +79,6 @@ function ViewProfile(props) {
     </div>
   );
 }
-//console.log("porps",this.props);
 
 const mapStateToProps = (state) => {
   return { datas: state };

@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Events = require("../models/events.model");
 const multermiddel = require("../middelware/multer");
-const cloudinary = require("cloudinary");
 const cloud = require("../config/CLoudinaryconfi");
 
 router.post("/createEvent", multermiddel, async (req, res) => {

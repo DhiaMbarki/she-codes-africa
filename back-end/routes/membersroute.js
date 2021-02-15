@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Memberstable = require("../models/members.model");
 const multermiddel = require("../middelware/multer");
-const cloudinary = require("cloudinary");
 const cloud = require("../config/CLoudinaryconfi");
 
 router.post("/editprofile", multermiddel, async (req, res) => {
