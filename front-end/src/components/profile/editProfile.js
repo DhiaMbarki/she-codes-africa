@@ -9,6 +9,7 @@ import { Component } from "react";
 // import { Image } from "@chakra-ui/react"
 // import { Button, ButtonGroup } from "@chakra-ui/react"
 
+
 import { Button,Form,Image ,Row,Col} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 

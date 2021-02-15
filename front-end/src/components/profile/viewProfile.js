@@ -4,6 +4,7 @@ import { MDBBox, MDBBtn, MDBCol, MDBRow } from "mdbreact";
 
 import { useHistory } from "react-router-dom";
 
+
 var fakeEvents = [
   {
     Title: "women in tech",
