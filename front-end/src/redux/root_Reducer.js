@@ -5,8 +5,8 @@ import editprofileReducer from "./reducers/editprofileReducer";
 import blogReducer from "./reducers/blogsReducer";
 
 export default combineReducers({
-  events: eventsReducer,
   auth: authReducer,
   editProfile: editprofileReducer,
+  events: eventsReducer,
   blogs: blogReducer,
 });
