@@ -23,6 +23,8 @@ import Loader from "./components/UI/Loader";
 import NavHome from "./components/pages/NavHome";
 import HeaderHome from "./components/pages/HeaderHome";
 import section from "./components/pages/section";
+import Slideshow from "./components/pages/Slideshow";
+
 
 
 
@@ -96,6 +98,8 @@ const App: FC = () => {
         <Route exact path="/" component={HeaderHome} />
         <Route exact path="/" component={section} />
         <Route exact path="/" component={Home} />  
+        <Route exact path="/" component={Slideshow} />  
+
 
         </div>
  
