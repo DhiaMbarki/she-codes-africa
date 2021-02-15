@@ -12,6 +12,7 @@ import  $  from "jquery";
 import  { connect } from 'react-redux'
 import addprofileaction from '../../redux/actions/editprofileaction'
 
+
 class EditProfile extends Component {
     constructor(propos) {
         super(propos);
