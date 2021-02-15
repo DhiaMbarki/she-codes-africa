@@ -1,0 +1,6 @@
+Before you begin please do this steps :
+1// psql -U postgres -W
+2// DROP DATABASE  IF EXISTS  shecodeafrica;
+3// CREATE DATABASE shecodeafrica;
+4// \c shecodeafrica;
+
