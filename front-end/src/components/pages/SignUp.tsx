@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../UI/input';
 import Button from '../UI/Button';
 import Message from '../UI/Message';
-import { signup, setError } from '../../store/actions/authActions';
-import { RootState } from '../../store';
+import { signup, setError } from '../../redux/actions/authActions';
+import { RootState } from '../../redux/index';
 import './SignUp.css'
 
 const SignUp: FC = () => {
@@ -18,7 +18,6 @@ const SignUp: FC = () => {
   const dispatch = useDispatch();
   const { error } = useSelector((state: RootState) => state.auth);
   useEffect(() => {
-    console.log(error)
     return () => {
       if(error) {
         dispatch(setError(''));

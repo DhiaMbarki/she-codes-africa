@@ -55,3 +55,27 @@ const eventReducer = (state = initState, action) => {
 };
 
 export default eventReducer;
+
+// import { FETCH_POSTS, ADD_EVENT } from '../actions/eventTypes';
+
+// const initialState = {
+//   events: [],
+//   event: {}
+// };
+
+// export default function(state = initialState, action) {
+//   switch (action.type) {
+//     case FETCH_POSTS:
+//       return {
+//         ...state,
+//         events: action.payload
+//       };
+//     case ADD_EVENT:
+//       return {
+//         ...state,
+//         event: action.payload
+//       };
+//     default:
+//       return state;
+//   }
+// }

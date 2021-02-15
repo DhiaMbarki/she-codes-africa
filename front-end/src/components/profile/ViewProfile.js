@@ -1,4 +1,6 @@
-
+import React from "react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -19,23 +21,23 @@ function ViewProfile(props) {
           height="300"
         ></img>
         <br></br>
-        <p id="lable" fontSize="3xl" as="samp" color="black" as="cite">
+        <Text id="lable" fontSize="3xl" as="samp" color="black" as="cite">
           Name
-        </p>
+        </Text>
         <br></br>
-        <p id="name" fontSize="2xl" as="samp" color="black" as="samp">
+        <Text id="name" fontSize="2xl" as="samp" color="black" as="samp">
           {props.datas.editProfile.Firstname}
-        </p>
+        </Text>
         <br></br>
       </div>
       <div className="aboutme">
-        <p fontSize="3xl" color="black" as="cite">
+        <Text fontSize="3xl" color="black" as="cite">
           About me
-        </p>
+        </Text>
         <br></br>
-        <p fontSize="lg" as="em">
+        <Text fontSize="lg" as="em">
           {props.datas.editProfile.Biography}
-        </p>
+        </Text>
         <div className="link">
           <a href={props.datas.editProfile.Githubacountlink}>
             <img
@@ -67,12 +69,12 @@ function ViewProfile(props) {
         <br></br>
         <hr />
         <br></br>
-        <button colorScheme="teal" size="md" onClick={handleClick}>
+        <Button colorScheme="teal" size="md" onClick={handleClick}>
           Edit profile
-        </button>
-        <button id="clearevent" colorScheme="teal" size="md">
+        </Button>
+        <Button id="clearevent" colorScheme="teal" size="md">
           Clear event
-        </button>
+        </Button>
       </div>
     </div>
   );
