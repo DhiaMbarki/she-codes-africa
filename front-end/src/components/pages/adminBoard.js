@@ -24,7 +24,7 @@ class AdminBoard extends Component {
           <LinkContainer to="/addAdmin">
             <NavDropdown.Item>Add Admin</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to="/addBlog">
+          <LinkContainer to="/addBlogs">
             <NavDropdown.Item>Add Blog</NavDropdown.Item>
           </LinkContainer>
           <LinkContainer to="/addEvents">

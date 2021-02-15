@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Events() {
 
-  const events = useSelector((state) => {return state.events})
+  const events = useSelector((state) => {return state.events.events})
   console.log(events)
 
   const classes = useStyles(events);
