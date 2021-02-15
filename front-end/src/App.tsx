@@ -20,7 +20,7 @@ import Dashboard from "./components/pages/Dashboard";
 import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
-
+import addCodingressource from "../src/components/codingResources/addCodingressource";
 import ViewJobs  from './components/Jobs/viewJobs'
 import JOBDetails  from './components/Jobs/jobDetail'
 import CodingResources from './components/codingResources/codingResources'
@@ -87,8 +87,7 @@ const App: FC = () => {
           <Route path="/viewJobs/:id" children={<JOBDetails/>} />
 
           <Route exact path="/codingResources" component={CodingResources} />
-
-
+        <Route path="/addCodingResources" component={addCodingressource} />
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
