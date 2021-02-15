@@ -2,6 +2,9 @@ const Sequelize = require("sequelize");
 const { db } = require("./indexdb");
 
 const Events = db.define("Events", {
+  Image: {
+    type: Sequelize.STRING,
+  },
   Title: {
     type: Sequelize.STRING,
   },
@@ -9,9 +12,6 @@ const Events = db.define("Events", {
     type: Sequelize.STRING,
   },
   Time: {
-    type: Sequelize.STRING,
-  },
-  Image: {
     type: Sequelize.STRING,
   },
   Status: {

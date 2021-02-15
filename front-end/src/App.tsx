@@ -21,10 +21,9 @@ import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 
-import ViewJobs  from './components/Jobs/viewJobs'
-import JOBDetails  from './components/Jobs/jobDetail'
-import CodingResources from './components/codingResources/codingResources'
-
+import ViewJobs from "./components/Jobs/viewJobs";
+import JOBDetails from "./components/Jobs/jobDetail";
+import CodingResources from "./components/codingResources/codingResources";
 
 import firebase from "./firebase/config";
 import {
@@ -84,10 +83,9 @@ const App: FC = () => {
           <Route exact path="/editProfile" component={EditProfile} />
 
           <Route exact path="/viewJobs" component={ViewJobs} />
-          <Route path="/viewJobs/:id" children={<JOBDetails/>} />
+          <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
           <Route exact path="/codingResources" component={CodingResources} />
-
 
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
@@ -114,3 +112,16 @@ const App: FC = () => {
 };
 
 export default App;
+
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="textSecondary" align="center">
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://material-ui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }

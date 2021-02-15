@@ -4,8 +4,9 @@ const cors = require("cors");
 require('dotenv').config()
 const { db } = require("./models/indexdb")
 const app = express();
-const memerout = require("./routes/membersroute")
 
+const memerout = require("./routes/membersroute")
+const eventrouter = require("./routes/eventsroute")
 
 //var corsOptions = {
   //origin: "http://localhost:8081"
@@ -30,6 +31,7 @@ db.authenticate()
 app.use('/images', express.static('Images'))
 // use the root 
 app.use("/", memerout);
+app.use("/createEvent",eventrouter)
 
 // set port, listen for requests
 const PORT = process.env.PORT;
