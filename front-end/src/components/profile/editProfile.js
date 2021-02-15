@@ -15,7 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import $ from "jquery";
 import { connect } from "react-redux";
-import addprofileaction from "../../redux/actions/editProfileAction";
+import addprofileaction from "../../redux/actions/editprofileaction";
 
 class EditProfile extends Component {
   constructor(propos) {
