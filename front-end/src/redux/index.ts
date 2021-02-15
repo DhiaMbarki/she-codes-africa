@@ -1,13 +1,11 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, applyMiddleware, combineReducers } from "redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-import authReducer from './reducers/authReducer';
- import editProfileReducer from "../redux/reducers/editProfileReducer";
- import blogReducer from "../redux/reducers/blogsReducer";  
- import eventReducer from "../redux/reducers/eventsReducer";
-
-
+import authReducer from "./reducers/authReducer";
+import editProfileReducer from "../redux/reducers/editprofileReducer";
+import blogReducer from "../redux/reducers/blogsReducer";
+import eventReducer from "../redux/reducers/eventsReducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -24,5 +22,3 @@ const store = createStore(
 export type RootState = ReturnType<typeof rootReducer>;
 
 export default store;
-
-

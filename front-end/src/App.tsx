@@ -20,11 +20,12 @@ import Dashboard from "./components/pages/Dashboard";
 import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
-
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
-
+//admin access 
+import PostEvent from "./components/events/addEvents";
+ 
 import firebase from "./firebase/config";
 import {
   getUserById,
@@ -91,6 +92,8 @@ const App: FC = () => {
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
           <Route path="/blogs/:id" children={<BlogDetails />} />
+
+          <Route exact path="/addEvents" component={PostEvent} />
         </Switch>
 
         <footer>
