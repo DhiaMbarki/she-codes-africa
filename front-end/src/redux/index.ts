@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import authReducer from './reducers/authReducer';
- import editProfileReducer from "../redux/reducers/editprofileRducer";
+ import editProfileReducer from "../redux/reducers/editprofileReducer";
  import blogReducer from "../redux/reducers/blogsReducer";  
  import eventReducer from "../redux/reducers/eventsReducer";
 

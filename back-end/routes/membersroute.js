@@ -27,4 +27,7 @@ router.post('/editprofile', multermiddel, async (req, res) => {
         res.status(500).send({ errorRegistration: err.message });
     }
 });
+
+
+
 module.exports = router; 

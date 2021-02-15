@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 function ViewProfile(props) {
   let history = useHistory();
+  console.log(props)
   function handleClick() {
     history.push("/EditProfile");
   }
