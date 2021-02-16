@@ -22,7 +22,7 @@ router.post("/createEvent", multermiddel, async (req, res) => {
     //Insert data into Events
     let Savedata = await Events.create(dts);
     res.status(201).send({
-      message: "Events created in shecodeafrica database with success!",
+      message: "Events registered in shecodeafrica database with success !",
       Savedata,
     });
   } catch (err) {

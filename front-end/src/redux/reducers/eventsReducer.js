@@ -1,7 +1,7 @@
 import {ADD_EVENT,FETCH_EVENTS } from "../actions/eventTypes";
 import FakeEvents from "../../components/events/fakeEvents";
 
-const initState = {events : FakeEvents};
+const initState = {events : ""};
 
 
 const eventReducer = (state = initState, action) => {

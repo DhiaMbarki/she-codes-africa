@@ -18,6 +18,7 @@ class PostEvent extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.fileSelecHandler=this.fileSelecHandler.bind(this);
   }
 
   onChange(e) {
@@ -42,7 +43,7 @@ class PostEvent extends Component {
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
-        this.setState({ Profilelimage: reader.result });
+        this.setState({ Image: reader.result });
       }
     };
     reader.readAsDataURL(event.target.files[0]);
@@ -54,7 +55,12 @@ class PostEvent extends Component {
       <div>
         <h1>Add Event</h1>
         <Form onSubmit={this.onSubmit}>
-        
+        <img
+            borderRadius="full"
+            width="200" height="250"
+            src={this.state.Image}
+            alt="My Event  Image"
+          />
         <Form.Group >
            <Form.File id="exampleFormControlFile1"  onChange={this.fileSelecHandler} />
            </Form.Group>
@@ -63,7 +69,7 @@ class PostEvent extends Component {
             <br />
             <input
               type="text"
-              name="title"
+              name="Title"
               onChange={this.onChange}
               value={this.state.Title}
             />
@@ -125,4 +131,4 @@ PostEvent.propTypes = {
   createEvent: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createEvent })(PostEvent);
+export default connect(null,  {createEvent})(PostEvent);
