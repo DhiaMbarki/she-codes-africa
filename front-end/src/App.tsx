@@ -98,7 +98,6 @@ const App: FC = () => {
 
 
 
-
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />

@@ -18,7 +18,6 @@ const SignUp: FC = () => {
   const dispatch = useDispatch();
   const { error } = useSelector((state: RootState) => state.auth);
   useEffect(() => {
-    console.log(error)
     return () => {
       if(error) {
         dispatch(setError(''));

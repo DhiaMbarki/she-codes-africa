@@ -1,28 +1,25 @@
 const Sequelize = require("sequelize");
 const { db } = require("./indexdb");
 
-const Events = db.define("Events", {
+const Blogs = db.define("Events", {
   Image: {
     type: Sequelize.STRING,
   },
   Title: {
     type: Sequelize.STRING,
   },
-  Date: {
+  Author: {
     type: Sequelize.STRING,
   },
-  Time: {
+  Text: {
     type: Sequelize.STRING,
   },
-  Status: {
-    type: Sequelize.STRING,
-  },
-  About: {
+  postedAt: {
     type: Sequelize.STRING,
   },
 });
 
-Events.sync().then(() => {
-  console.log("Events is created in shecodeafricaDB with succ !!");
+Blogs.sync().then(() => {
+  console.log("Blogs is created in shecodeafricaDB with succ !!");
 });
-module.exports = Events;
+module.exports = Blogs;

@@ -90,7 +90,7 @@
 // export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
 
 import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar} from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { signout } from "../../redux/actions/authActions";
@@ -109,7 +109,11 @@ class NavigationBar extends React.Component {
   render() {
     const { user, signout } = this.props;
     var fakeUser = "User";
+<<<<<<< HEAD
     //console.log(user.type)
+=======
+
+>>>>>>> ae4d4867ce21df429699c2f38d8da65e88933046
     return (
       //   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       //     <Navbar.Brand href="/">She Codes Africa</Navbar.Brand>

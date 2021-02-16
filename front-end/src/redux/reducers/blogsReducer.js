@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   GET_POST,
   CREATE_POST,
@@ -111,6 +112,12 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         post: state.posts.find((postItem) => postItem.id === payload),
       };
+=======
+import {ADD_BLOG,FETCH_BLOGS} from "../actions/blogsTypes";
+import FakeBlogs from "../../components/blogs/FakeBlogs";
+
+const initState = {events : FakeBlogs};
+>>>>>>> ae4d4867ce21df429699c2f38d8da65e88933046
 
     case UPDATE_POST:
       return {
@@ -120,12 +127,32 @@ export default (state = initialState, { type, payload }) => {
         ),
       };
 
+<<<<<<< HEAD
     case DELETE_POST:
       return {
         ...state,
         posts: state.posts.filter((postItem) => postItem.id !== payload),
+=======
+const blogReducer = (state = initState, action) => {
+  switch (action.type) {
+    case FETCH_BLOGS:
+      return {
+        ...state,
+        events: action.payload,
+      };
+    case ADD_BLOG:
+      return {
+        ...state,
+        event: action.payload,
+>>>>>>> ae4d4867ce21df429699c2f38d8da65e88933046
       };
     default:
       return state;
   }
 };
+<<<<<<< HEAD
+=======
+
+export default blogReducer;
+
+>>>>>>> ae4d4867ce21df429699c2f38d8da65e88933046

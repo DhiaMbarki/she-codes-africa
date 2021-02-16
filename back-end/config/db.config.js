@@ -1,9 +1,9 @@
 require("dotenv").config();
 //console.log((process.env.DB))
 module.exports = {
-  HOST: "localhost",
-  USER: "postgres",
-  PASSWORD: "123",
+  HOST: 'localhost',
+  USER: 'postgres',
+  PASSWORD: "12345",
   DB: process.env.DB,
   dialect: "postgres",
   pool: {
@@ -12,4 +12,4 @@ module.exports = {
     acquire: 30000,
     idle: 10000,
   },
-};
+}; 
