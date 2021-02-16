@@ -3,7 +3,6 @@ import FakeBlogs from "../../components/blogs/FakeBlogs";
 
 const initState = {Fetchedblogs : [],Addedblogs:[]};
 
-
 const blogReducer = (state = initState, action) => {
   switch (action.type) {
     case FETCH_BLOGS:

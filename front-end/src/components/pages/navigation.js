@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar} from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { signout } from "../../redux/actions/authActions";
