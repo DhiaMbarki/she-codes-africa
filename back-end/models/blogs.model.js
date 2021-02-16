@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const { db } = require("./indexdb");
 
-const Blogs = db.define("Events", {
+const Blogs = db.define("Blogs", {
   Image: {
     type: Sequelize.STRING,
   },
