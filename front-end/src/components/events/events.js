@@ -11,24 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-import FakeEvents from "../events/fakeEvents";
-
-
 import { useSelector } from 'react-redux';
-
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -64,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Events() {
 
-  const events = useSelector((state) => {return state.events})
+  const events = useSelector((state) => {return state.events.events})
   console.log(events)
 
   const classes = useStyles(events);
@@ -78,7 +61,7 @@ export default function Events() {
       <CssBaseline />
       <AppBar position="relative"></AppBar>
       <main>
-        {/* Hero unit */}
+        
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography

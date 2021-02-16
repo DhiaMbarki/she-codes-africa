@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const Events = require("../models/events.model");
+const Blogs = require("../models/blogs.model");
 const multermiddel = require("../middelware/multer");
 const cloud = require("../config/CLoudinaryconfi");
 
-router.post("/createEvent", multermiddel, async (req, res) => {
+router.post("/createBLogs", multermiddel, async (req, res) => {
   try {
     const result = await cloud.uploads(req.body.Image);
     var ImageCL = result.ImageUrl;
@@ -13,16 +13,14 @@ router.post("/createEvent", multermiddel, async (req, res) => {
       CLoudinary_id: CLoudinary_idCL,
       Image: ImageCL,
       Title: req.body.Title,
-      Date: req.body.Date,
-      Time: req.body.Time,
-      Status: req.body.Status,
-      About: req.body.About,
-     
+      Author: req.body.Author,
+      Text: req.body.Text,
+      postedAt: req.body.postedAt,
     };
-    //Insert data into Events
-    let Savedata = await Events.create(dts);
+    //Insert data into Blogs
+    let Savedata = await Blogs.create(dts);
     res.status(201).send({
-      message: "Events registered in shecodeafrica database with success !",
+      message: "Blogs  registered in shecodeafrica database with success! ",
       Savedata,
     });
   } catch (err) {

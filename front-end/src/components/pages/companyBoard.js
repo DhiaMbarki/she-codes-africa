@@ -28,18 +28,18 @@ class CompanyBoard extends Component {
               <NavDropdown.Item>Edit profile</NavDropdown.Item>
             </LinkContainer>
             {
-              <LinkContainer to="/viewJobs">
+              <LinkContainer to="/addJobs">
                 <NavDropdown.Item>Post job</NavDropdown.Item>
               </LinkContainer>
             }
             <LinkContainer to="/codingResources">
               <NavDropdown.Item>Coding Resources</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/">
+            <LinkContainer to="/webinar">
               <NavDropdown.Item>Webinar</NavDropdown.Item>
             </LinkContainer>
             <LinkContainer to="/">
-            <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
+              <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
             </LinkContainer>
           </NavDropdown>
         </Nav>
