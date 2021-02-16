@@ -22,13 +22,10 @@ import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
 import NavHome from "./components/pages/NavHome";
 import HeaderHome from "./components/pages/HeaderHome";
-import section from "./components/pages/section";
-
-
-
+import Section from "./components/pages/section";
+import Slideshow from "./components/pages/Slideshow";
 
 import AddBlogs from "./components/blogs/AddBlogs";
-
 
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
@@ -48,15 +45,7 @@ const App: FC = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state: RootState) => state.auth);
 
-  
-
   // Check if user exists
-
-
-
-
-
-
 
   useEffect(() => {
     dispatch(setLoading(true));
@@ -79,27 +68,36 @@ const App: FC = () => {
   if (loading) {
     return <Loader />;
   }
-  
 
   return (
-
     <Router>
       <div>
         <NavigationBar />
         <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <NavHome></NavHome>
+                <HeaderHome></HeaderHome>
+                <Section></Section>
+                <Home></Home>
+                <Slideshow></Slideshow>
+              </>
+            )}
+          />
 
-        
 
-        <div>
 
-          <Route exact path="/" component={NavHome} />
-        <Route exact path="/" component={HeaderHome} />
-        <Route exact path="/" component={section} />
-        <Route exact path="/" component={Home} />  
 
-        </div>
- 
-         
+
+
+
+
+
+
+
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />
@@ -141,12 +139,7 @@ const App: FC = () => {
         </footer>
       </div>
     </Router>
-
   );
-  
-  
-  
 };
-
 
 export default App;

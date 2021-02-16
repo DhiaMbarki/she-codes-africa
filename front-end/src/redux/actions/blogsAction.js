@@ -1,3 +1,4 @@
+ 
 import { GET_POST, CREATE_POST, UPDATE_POST, DELETE_POST } from "./types";
 
 // get a post

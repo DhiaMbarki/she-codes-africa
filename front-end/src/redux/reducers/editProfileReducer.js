@@ -1,4 +1,3 @@
-import addProfileAction from "../actions/editProfileAction";
 import { ADD_PROFILE } from "../actions/editProfileTypes";
 const initialState = {
   PhotosprofileUrl: "",
@@ -9,7 +8,7 @@ const initialState = {
   Websiteurl: "",
 };
 
-const editProfileReducer = (state = initialState, action) => {
+const editprofileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROFILE:
       return {
@@ -25,4 +24,4 @@ const editProfileReducer = (state = initialState, action) => {
       return state;
   }
 };
-export default editProfileReducer;
+export default editprofileReducer;

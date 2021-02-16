@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { createPost } from "../../redux/actions/blogsAction";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import {createPost} from "../../redux/actions/blogsAction"
 const AddBlogs = () => {
   let history = useHistory();
   const dispatch = useDispatch();
