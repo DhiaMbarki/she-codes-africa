@@ -20,7 +20,7 @@ router.post("/createBLogs", multermiddel, async (req, res) => {
     //Insert data into Blogs
     let Savedata = await Blogs.create(dts);
     res.status(201).send({
-      message: "Blogs created in shecodeafrica database with success!",
+      message: "Blogs  registered in shecodeafrica database with success! ",
       Savedata,
     });
   } catch (err) {

@@ -7,7 +7,8 @@ const app = express();
 
 const memerout = require("./routes/membersroute")
 const eventrouter = require("./routes/eventsroute")
-
+const  blogsroute=require("./routes/blogsroute")
+const CodingResourcetable = require ("./routes/codingresourcesroute")
 //var corsOptions = {
   //origin: "http://localhost:8081"
 //};
@@ -31,7 +32,9 @@ db.authenticate()
 app.use('/images', express.static('Images'))
 // use the root 
 app.use("/", memerout);
-app.use("/createEvent",eventrouter)
+app.use("/", blogsroute);
+app.use("/",eventrouter)
+app.use("/",CodingResourcetable)
 
 // set port, listen for requests
 const PORT = process.env.PORT;

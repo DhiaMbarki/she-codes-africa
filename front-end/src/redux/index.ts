@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import authReducer from "./reducers/authReducer";
 
-import editProfileReducer from "../redux/reducers/editprofileReducer";
+import editProfileReducer from "../redux/reducers/editProfileReducer";
 import blogReducer from "../redux/reducers/blogsReducer";
 import eventReducer from "../redux/reducers/eventsReducer";
 
