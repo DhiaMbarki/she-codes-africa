@@ -56,7 +56,6 @@ class PostEvent extends Component {
         <h1>Add Event</h1>
         <Form onSubmit={this.onSubmit}>
         <img
-            borderRadius="full"
             width="200" height="250"
             src={this.state.Image}
             alt="My Event  Image"

@@ -29,7 +29,7 @@ export function createEvent(postEvent) {
       console.log ( "Event  received  from server after have  been saved " ,response);
         dispatch({
            type: ADD_EVENT,
-           payload: response.Savedata
+           payload: [response.Savedata]
          })
         }).catch(Erorr=> console.error("Error:",Erorr))
 }

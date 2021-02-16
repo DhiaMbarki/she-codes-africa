@@ -48,10 +48,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Events() {
 
   const events = useSelector((state) => {return state.events.events})
-  console.log(events)
-
   const classes = useStyles(events);
-
   const readArticle = (e) => {
     console.log(e);
   };
@@ -88,19 +85,19 @@ export default function Events() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {events.map((card, index) => (
+            {[1,3,5,4].map((card, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
                     image="https://www.avarievents.com/wp-content/uploads/2019/07/1-3-1080x450.jpg"
-                    title={card.Title}
+                    title={card[0]}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
                       {card.Title}
                     </Typography>
-                    <Typography>{card.About}</Typography>
+                    <Typography>yeah</Typography>
                   </CardContent>
                   <CardActions>
                     <Link to={`/events/${index}`}>

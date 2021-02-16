@@ -5,7 +5,7 @@ import { MDBBox, MDBBtn } from "mdbreact";
 
 function EventDetails() {
   let { id } = useParams();
-
+           console.log ("id",id)    
   return (
     <div style={{ padding: "50px" }}>
       <div className="list-group" style={{ margin: "20px 100px" }}>

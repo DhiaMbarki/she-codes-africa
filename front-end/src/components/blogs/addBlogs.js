@@ -50,7 +50,7 @@ class PostBlog extends Component {
   render() {
     return (
       <div>
-        <h1>Add Event</h1>
+        <h1>Add Blog</h1>
         <Form onSubmit={this.onSubmit}>
         <Form.Group >
            <Form.File id="exampleFormControlFile1"  onChange={this.fileSelecHandler} />
