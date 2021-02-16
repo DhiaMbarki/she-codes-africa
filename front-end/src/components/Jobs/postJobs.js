@@ -14,7 +14,7 @@ class PostJobs extends Component {
     console.log("datasdata:", propos.datas);
     this.state = {
       Profilelimage:
-        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+        "https://www.canoetrail.co.uk/images/blog/we_are_hiring.png",
       firstname: "",
       lastname: "",
       location: "",
@@ -38,7 +38,7 @@ class PostJobs extends Component {
     this.Changestackinuse = this.Changestackinuse.bind(this);
     this.Changestacktolearn = this.Changestacktolearn.bind(this);
     this.fileSelecHandler = this.fileSelecHandler.bind(this);
-    this.handlesave = this.handlesave.bind(this);
+    // this.handlesave = this.handlesave.bind(this);
     this.handleChangepage = this.handleChangepage.bind(this);
   }
   handleChangepage() {
@@ -75,53 +75,57 @@ class PostJobs extends Component {
     };
     reader.readAsDataURL(event.target.files[0]);
   }
-//   handlesave() {
-//     $.post("http://localhost:3000/editprofile", {
-//       IdFb: "",
-//       PhotosprofileUrl: this.state.Profilelimage,
-//       Firstname: this.state.firstname,
-//       Lastname: this.state.lastname,
-//       DateOfBirth: "",
-//       Biography: this.state.biograpthy,
-//       Location: this.state.location,
-//       Githubacountlink: this.state.githubaccount,
-//       Linkedincountlink: this.state.linkedinaccount,
-//       Websiteurl: this.state.website,
-//       Engineeringareas: this.state.engnchoice,
-//       Gender: this.state.selectedGender,
-//       Howcanwehelpyousucced: this.state.selectedchoise,
-//       Companyname: this.state.companyname,
-//       Jobtitle: this.state.jobtitle,
-//       YearsOfexperience: Number(this.state.yearsintech),
-//       Codingstackinuse: this.state.codingstuckinuse,
-//       Codingstacktolearn: this.state.codingsticktolearn,
-//     })
-//       .then((response) => {
-//         console.log("res from server:", response.Savedata.Firstname);
-//         alert("Profile is  Saved with succes");
-//       })
-//       .then((response) => {
-//         this.props.addnewprofile(
-//           response.Savedata.PhotosprofileUrl,
-//           response.Savedata.Firstname,
-//           response.Savedata.Biography,
-//           response.Savedata.Githubacountlink,
-//           response.Savedata.Linkedincountlink,
-//           response.Savedata.Websiteurl
-//         );
-//         console.log(this.props);
-//       })
+  //   handlesave() {
+  //     $.post("http://localhost:3000/editprofile", {
+  //       IdFb: "",
+  //       PhotosprofileUrl: this.state.Profilelimage,
+  //       Firstname: this.state.firstname,
+  //       Lastname: this.state.lastname,
+  //       DateOfBirth: "",
+  //       Biography: this.state.biograpthy,
+  //       Location: this.state.location,
+  //       Githubacountlink: this.state.githubaccount,
+  //       Linkedincountlink: this.state.linkedinaccount,
+  //       Websiteurl: this.state.website,
+  //       Engineeringareas: this.state.engnchoice,
+  //       Gender: this.state.selectedGender,
+  //       Howcanwehelpyousucced: this.state.selectedchoise,
+  //       Companyname: this.state.companyname,
+  //       Jobtitle: this.state.jobtitle,
+  //       YearsOfexperience: Number(this.state.yearsintech),
+  //       Codingstackinuse: this.state.codingstuckinuse,
+  //       Codingstacktolearn: this.state.codingsticktolearn,
+  //     })
+  //       .then((response) => {
+  //         console.log("res from server:", response.Savedata.Firstname);
+  //         alert("Profile is  Saved with succes");
+  //       })
+  //       .then((response) => {
+  //         this.props.addnewprofile(
+  //           response.Savedata.PhotosprofileUrl,
+  //           response.Savedata.Firstname,
+  //           response.Savedata.Biography,
+  //           response.Savedata.Githubacountlink,
+  //           response.Savedata.Linkedincountlink,
+  //           response.Savedata.Websiteurl
+  //         );
+  //         console.log(this.props);
+  //       })
 
-//       .catch((error) => {
-//         console.log("errorfromser:", error);
-//       });
-//   }
+  //       .catch((error) => {
+  //         console.log("errorfromser:", error);
+  //       });
+  //   }
   render() {
     return (
       <div class="container">
         <Form>
           <Form.Group>
-            <Image src={this.state.Profilelimage} rounded />
+            <Image
+              src={this.state.Profilelimage}
+              style={{ width: "50%", height: "50%" }}
+              rounded
+            />
           </Form.Group>
           <Form.Group>
             <Form.File
@@ -131,224 +135,49 @@ class PostJobs extends Component {
           </Form.Group>
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>About me</Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Label>Description</Form.Label>
+            <Form.Control as="textarea" rows={10} />
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Firstname</Form.Label>
+            <Form.Label>Location</Form.Label>
             <Form.Control
               value={this.state.firstname}
               onChange={this.handleChange}
-              name="firstname"
+              name="Location"
               type="text"
-              placeholder="Firstname"
+              placeholder="Location"
             />
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Lastname</Form.Label>
+            <Form.Label>Company name</Form.Label>
             <Form.Control
-              value={this.state.lastname}
+              value={this.state.firstname}
               onChange={this.handleChange}
-              name="lastname"
+              name="Company name"
               type="text"
-              placeholder="Lastname"
-            />
-          </Form.Group>
-
-          <Form.Group as={Row}>
-            <Form.Label as="legend" column sm={2}>
-              Gender
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Check
-                type="radio"
-                label="female"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios1"
-                value="female"
-                checked={this.state.selectedGender === "Female"}
-                onChange={this.ChangeGender}
-              />
-              <Form.Check
-                type="radio"
-                label="male"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios2"
-                value="Male"
-                onChange={this.ChangeGender}
-              />
-            </Col>
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>City</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.location}
-              onChange={this.handleChange}
-              name="location"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>Biography</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.biograpthy}
-              onChange={this.handleChange}
-              name="biograpthy"
+              placeholder="Company name"
             />
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>HOW CAN WE HELP YOU SUCCEED?</Form.Label>
+            <Form.Label>Types of employees</Form.Label>
             <Form.Control
               as="select"
               defaultValue="Choose..."
               onChange={this.Changechoice}
             >
-              <option>Choose...</option>
               <option value="Employment Opportunities">
                 Employment Opportunities
               </option>
-              <option value="Scholarships">Scholarships</option>
-              <option value="Career Coaching">Career Coaching</option>
-              <option value="Inspiration">Inspiration</option>
-              <option value="Career Advancement">Career Advancement</option>
-              <option value="Leadership Opportunities">
-                Leadership Opportunities
+              <option value="Full-time">Full-time</option>
+              <option value="Part-time">Part-time</option>
+              <option value="Casual">Casual</option>
+              <option value="Fixed term">Fixed term</option>
+              <option value="Apprentices and trainees">
+                Apprentices and trainees
               </option>
-            </Form.Control>
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>WEBSITE</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.website}
-              onChange={this.handleChange}
-              name="website"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>GITHUB</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.website}
-              onChange={this.handleChange}
-              name="githubaccount"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>LINKEDIN</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.linkedinaccount}
-              onChange={this.handleChange}
-              name="linkedinaccount"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>WHERE DO YOU WORK?</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.companyname}
-              onChange={this.handleChange}
-              name="companyname"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>JOB TITLE</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.jobtitle}
-              onChange={this.handleChange}
-              name="jobtitle"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>HOW MANY YEARS HAVE YOU BEEN IN TECH?</Form.Label>
-            <Form.Control
-              className="text"
-              value={this.state.yearsintech}
-              onChange={this.handleChange}
-              name="yearsintech"
-            />
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>
-              WHAT ARE YOUR ENGINEERING AREAS OF INTEREST?
-            </Form.Label>
-            <Form.Control
-              as="select"
-              defaultValue="Choose..."
-              onChange={this.ChangeEnngenchoice}
-            >
-              <option>Choose...</option>
-              <option value="Architecture">Architecture</option>
-              <option value="Analytics">Analytics</option>
-              <option value="Data Science">Data Science</option>
-              <option value="Mobile">Mobile</option>
-              <option value="Mobile">Mobile</option>
-              <option value="Web">Web</option>
-            </Form.Control>
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>
-              WHAT CODING STACK DO YOU USE PROFESSIONALLY?
-            </Form.Label>
-            <Form.Control
-              as="select"
-              defaultValue="Choose..."
-              onChange={this.Changestackinuse}
-            >
-              <option>Choose...</option>
-              <option value="JavaScript">JavaScript</option>
-              <option value="c++ or Java">c++ / Java</option>
-              <option value="Angular">Angular</option>
-              <option value="Vue">Vue</option>
-              <option value="Direct SQL">Direct SQL</option>
-              <option value="NO SQL databases">NO SQL databases</option>
-              <option value="Docker">Docker</option>
-              <option value="Open to learn anything">
-                Open to learn anything{" "}
-              </option>
-              <option value="HTML/CSS">HTML/CSS</option>
-              <option value="Grails">Grails</option>
-            </Form.Control>
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>
-              WHAT CODING STACK DO YOU USE PROFESSIONALLY?
-            </Form.Label>
-            <Form.Control
-              as="select"
-              defaultValue="Choose..."
-              onChange={this.Changestackinuse}
-            >
-              <option>Choose...</option>
-              <option value="JavaScript">JavaScript</option>
-              <option value="c++ or Java">c++ / Java</option>
-              <option value="Angular">Angular</option>
-              <option value="Vue">Vue</option>
-              <option value="Direct SQL">Direct SQL</option>
-              <option value="NO SQL databases">NO SQL databases</option>
-              <option value="Docker">Docker</option>
-              <option value="Open to learn anything">
-                Open to learn anything{" "}
-              </option>
-              <option value="HTML/CSS">HTML/CSS</option>
-              <option value="Grails">Grails</option>
             </Form.Control>
           </Form.Group>
 
@@ -387,5 +216,5 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const Container = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
+const Container = connect(mapStateToProps, mapDispatchToProps)(PostJobs);
 export default Container;
