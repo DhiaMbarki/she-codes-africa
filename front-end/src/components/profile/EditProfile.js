@@ -5,6 +5,7 @@ import $ from "jquery";
 import { connect } from "react-redux";
 import addprofileaction from "../../redux/actions/editProfileAction";
 
+
 class EditProfile extends Component {
   constructor(props) {
     super(props);
