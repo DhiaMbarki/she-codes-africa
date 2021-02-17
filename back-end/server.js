@@ -5,10 +5,10 @@ require("dotenv").config();
 const { db } = require("./models/indexdb");
 const app = express();
 
-const memerout = require("./routes/membersroute");
-const eventrouter = require("./routes/eventsroute");
-const blogsroute = require("./routes/blogsroute");
-const CodingResourcetable = require("./routes/codingresourcesroute");
+// const memerout = require("./routes/membersroute");
+// const eventrouter = require("./routes/eventsroute");
+// const blogsroute = require("./routes/blogsroute");
+// const CodingResourcetable = require("./routes/codingresourcesroute");
 
 app.use(cors());
 
@@ -19,24 +19,26 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 //setup connection to database
-db.authenticate()
-  .then(() =>
-    console.log(
-      "Connection has been established successfully to shecodeafrica database."
-    )
-  )
-  .catch((err) =>
-    console.log("Unable to connect to the shecodeafrica database:" + err)
-  );
+// db.authenticate()
+//   .then(() =>
+//     console.log(
+//       "Connection has been established successfully to shecodeafrica database."
+//     )
+//   )
+//   .catch((err) =>
+//     console.log("Unable to connect to the shecodeafrica database:" + err)
+//   );
 //serve images in directory named images
-app.use("/images", express.static("Images"));
-// use the root
-app.use("/", memerout);
-app.use("/", blogsroute);
-app.use("/", eventrouter);
-app.use("/", CodingResourcetable);
+// app.use("/images", express.static("Images"));
+// // use the root
+// app.use("/", memerout);
+// app.use("/", blogsroute);
+// app.use("/", eventrouter);
+// app.use("/", CodingResourcetable);
 
 // set port, listen for requests
+
+////////////////////////////////////////////////////////  Webinar 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(
