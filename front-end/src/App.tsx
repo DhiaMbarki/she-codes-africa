@@ -31,6 +31,9 @@ import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
 
+import PostJobs from "../src/components/Jobs/postJobs";
+
+
 import firebase from "./firebase/config";
 import {
   getUserById,
@@ -88,16 +91,6 @@ const App: FC = () => {
             )}
           />
 
-
-
-
-
-
-
-
-
-
-
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />
@@ -115,6 +108,8 @@ const App: FC = () => {
 
           <Route exact path="/viewJobs" component={ViewJobs} />
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
+
+          <Route path="/postJobs" component={PostJobs} />
 
           <Route exact path="/codingResources" component={CodingResources} />
 

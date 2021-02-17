@@ -1,4 +1,5 @@
 import { ADD_PROFILE } from "../actions/editProfileTypes";
+
 const initialState = {
   PhotosprofileUrl: "",
   Firstname: "",
