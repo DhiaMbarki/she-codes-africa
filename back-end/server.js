@@ -9,6 +9,7 @@ const memerout = require("./routes/membersroute")
 const eventrouter = require("./routes/eventsroute")
 const  blogsroute=require("./routes/blogsroute")
 const CodingResourcetable = require ("./routes/codingresourcesroute")
+const companyroute = require ('./routes/companies.route')
 //var corsOptions = {
   //origin: "http://localhost:8081"
 //};
@@ -35,6 +36,7 @@ app.use("/", memerout);
 app.use("/", blogsroute);
 app.use("/",eventrouter)
 app.use("/",CodingResourcetable)
+app.use("/",companyroute)
 
 // set port, listen for requests
 const PORT = process.env.PORT;
