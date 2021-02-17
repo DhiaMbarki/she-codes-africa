@@ -21,10 +21,10 @@ class CompanyBoard extends Component {
             <Nav.Link>Upcoming events</Nav.Link>
           </LinkContainer>
           <NavDropdown title="Company Profile" id="collasible-nav-dropdown" menuAlign="left">
-            <LinkContainer to="/viewprofile">
+            <LinkContainer to="/viewCompanyProfile">
               <NavDropdown.Item>View profile</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/editProfile">
+            <LinkContainer to="/editCompanyProfile">
               <NavDropdown.Item>Edit profile</NavDropdown.Item>
             </LinkContainer>
             {

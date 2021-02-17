@@ -32,6 +32,9 @@ import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
 
 import PostJobs from "../src/components/Jobs/postJobs";
+import EditCompanyProfile from './components/companyProfile/EditCompanyProfile'
+import ViewCompanyProfile from './components/companyProfile/ViewCompanyProfile'
+
 
 
 import firebase from "./firebase/config";
@@ -110,6 +113,9 @@ const App: FC = () => {
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
           <Route path="/postJobs" component={PostJobs} />
+
+          <Route path="/editCompanyProfile" component={EditCompanyProfile} />
+          <Route path="/viewCompanyProfile" component={ViewCompanyProfile} />
 
           <Route exact path="/codingResources" component={CodingResources} />
 
