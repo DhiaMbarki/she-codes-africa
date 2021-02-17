@@ -1,30 +1,32 @@
 const express = require("express");
 const router = express.Router();
-const Blogs = require("../models/blogs.model");
-const multermiddel = require("../middelware/multer");
-const cloud = require("../config/CLoudinaryconfi");
+const Blogstable = require("../models/blogs.model");
 
-router.post("/createBLogs", multermiddel, async (req, res) => {
+router.post("/blogs", async (req, res) => {
   try {
-    const result = await cloud.uploads(req.body.Image);
-    var ImageCL = result.ImageUrl;
-    var CLoudinary_idCL = result.id;
-    const dts = {
-      CLoudinary_id: CLoudinary_idCL,
-      Image: ImageCL,
-      Title: req.body.Title,
-      Author: req.body.Author,
-      Text: req.body.Text,
-      postedAt: req.body.postedAt,
-    };
-    //Insert data into Blogs
-    let Savedata = await Blogs.create(dts);
+    const RstoS = req.body;
+    //Insert data   into Blogstable
+    let ReSv = await Blogstable.create(RstoS);
     res.status(201).send({
-      message: "Blogs  registered in shecodeafrica database with success! ",
-      Savedata,
+      message:
+        "Blogs is  registered in shecodeafrica database with success!",
+      ReSv,
     });
   } catch (err) {
     res.status(500).send({ errorRegistration: err.message });
+  }
+});
+router.get("/fetechall", async (req, res) => {
+  try {
+    const AllBlogs = await Blogstable.findAll({
+      order: [["createdAt", "DESC"]],
+    });
+    res.status(200).json({
+      message: "Fetched from blogs table successfully",
+      AllBlogs,
+    });
+  } catch (err) {
+    res.status(500).json({ errorFetchingfromDB: err.message });
   }
 });
 module.exports = router;
