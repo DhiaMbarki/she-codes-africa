@@ -1,3 +1,4 @@
+
 import { Component } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
@@ -20,15 +21,15 @@ class CompanyBoard extends Component {
           <LinkContainer to="/events">
             <Nav.Link>Upcoming events</Nav.Link>
           </LinkContainer>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <LinkContainer to="/viewprofile">
+          <NavDropdown title="Company Profile" id="collasible-nav-dropdown" menuAlign="left">
+            <LinkContainer to="/viewCompanyProfile">
               <NavDropdown.Item>View profile</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/editProfile">
+            <LinkContainer to="/editCompanyProfile">
               <NavDropdown.Item>Edit profile</NavDropdown.Item>
             </LinkContainer>
             {
-              <LinkContainer to="/addJobs">
+              <LinkContainer to="/postJobs">
                 <NavDropdown.Item>Post job</NavDropdown.Item>
               </LinkContainer>
             }
@@ -55,3 +56,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = { signout };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CompanyBoard);
+
