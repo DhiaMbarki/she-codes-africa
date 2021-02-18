@@ -47,13 +47,13 @@ class Slider extends React.Component {
     return (
       <div className="sliderr">
         <div className="slider__panel slider__panel__controls">
-          <div className="title">Lorem Ipsum</div>
+          <div className="title">OUR TEAMS</div>
           <div className="select">{selectItems}</div>
           <div className="description">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
+            et ea rebum. 
           </div>
         </div>
         <div className="slider__panel slider__panel__frame">
