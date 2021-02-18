@@ -24,9 +24,9 @@ import NavHome from "./components/pages/NavHome";
 import HeaderHome from "./components/pages/HeaderHome";
 import Section from "./components/pages/section";
 import Slideshow from "./components/pages/Slideshow";
-
+import addcodingresource  from "./components/codingResources/addCodingressource"
 import AddBlogs from "./components/blogs/AddBlogs";
-
+import postevent from  "./components/events/addEvents"
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
@@ -115,9 +115,9 @@ const App: FC = () => {
 
           <Route exact path="/viewJobs" component={ViewJobs} />
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
-
-          <Route exact path="/codingResources" component={CodingResources} />
-
+          <Route exact path="/addcodingResources" component={addcodingresource} />
+          <Route exact path="/codingResources" component={CodingResources } />
+          <Route exact path="/addevents" component={postevent} />
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
