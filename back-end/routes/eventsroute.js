@@ -29,4 +29,36 @@ router.post("/createEvent", multermiddel, async (req, res) => {
     res.status(500).send({ errorRegistration: err.message });
   }
 });
+router.get("/fetechallevents", async (req, res) => {
+  try {
+    const AllEvents = await Events.findAll({
+      order: [["createdAt", "DESC"]],
+    });
+    res
+      .status(200)
+      .json({
+        message: "Fetched AllEvents from Event's table successfully",
+        AllEvents,
+      });
+  } catch (err) {
+    res.status(500).json({ "Error Fetching from DB": err.message });
+  }
+});
+
+router.get("/fetechoneevent/:id",(req, res) => {
+  const id = req.params.id;
+
+  Events.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving from Event  with id=" + id,err
+      });
+    });
+});
+
+
 module.exports = router;
+

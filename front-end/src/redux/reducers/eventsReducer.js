@@ -1,7 +1,9 @@
 import {ADD_EVENT,FETCH_EVENTS } from "../actions/eventTypes";
 import FakeEvents from "../../components/events/fakeEvents";
 
-const initState = {events : ""};
+const initState = {fetchedevents : [],
+  addedevents :[]
+};
 
 
 const eventReducer = (state = initState, action) => {
@@ -9,12 +11,12 @@ const eventReducer = (state = initState, action) => {
     case FETCH_EVENTS:
       return {
         ...state,
-        events: action.payload,
+        fetchedevents:[...state.fetchedevents ,...action.payload ]
       };
     case ADD_EVENT:
       return {
         ...state,
-        event: action.payload,
+        addedevents: [...state.addedevents ,...action.payload ],
       };
     default:
       return state;
@@ -22,3 +24,4 @@ const eventReducer = (state = initState, action) => {
 };
 
 export default eventReducer;
+

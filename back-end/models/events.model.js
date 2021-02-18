@@ -18,7 +18,7 @@ const Events = db.define("Events", {
     type: Sequelize.STRING,
   },
   About: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT ,
   },
 });
 

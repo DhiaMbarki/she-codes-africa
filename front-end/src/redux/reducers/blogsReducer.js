@@ -1,19 +1,19 @@
 import {ADD_BLOG,FETCH_BLOGS} from "../actions/blogsTypes";
 import FakeBlogs from "../../components/blogs/FakeBlogs";
 
-const initState = {events : FakeBlogs};
+const initState = {Fetchedblogs : [],Addedblogs:[]};
 
 const blogReducer = (state = initState, action) => {
   switch (action.type) {
     case FETCH_BLOGS:
       return {
         ...state,
-        events: action.payload,
+        Fetchedblogs:[...state.Fetchedblogs ,...action.payload ]
       };
     case ADD_BLOG:
       return {
         ...state,
-        event: action.payload,
+        Addedblogs:[...state.Addedblogs ,...action.payload ]
       };
     default:
       return state;
@@ -21,4 +21,5 @@ const blogReducer = (state = initState, action) => {
 };
 
 export default blogReducer;
+
 
