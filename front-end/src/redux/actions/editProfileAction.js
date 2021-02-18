@@ -1,5 +1,5 @@
 import {ADD_PROFILE}   from "./editProfileTypes"
- const addprofileaction = ({ PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl}) => ({
+const addprofileaction = ({ PhotosprofileUrl ,Firstname, Biography,Githubacountlink ,Linkedincountlink,Websiteurl}) => ({
     type: ADD_PROFILE,
     payload: {
         PhotosprofileUrl,
@@ -12,3 +12,6 @@ import {ADD_PROFILE}   from "./editProfileTypes"
   });
   
   export default addprofileaction
+
+
+  
