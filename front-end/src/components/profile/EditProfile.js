@@ -1,14 +1,6 @@
+
 import React from "react";
 import { Component } from "react";
-// import { Input } from "@chakra-ui/react"
-// import { Text } from "@chakra-ui/react";
-// import { Textarea } from "@chakra-ui/react"
-// import { FormControl, FormLabel, RadioGroup, FormHelperText, HStack, Radio } from "@chakra-ui/react";
-// import { Checkbox, CheckboxGroup, Stack } from "@chakra-ui/react";
-// import { Select } from "@chakra-ui/react";
-// import { Image } from "@chakra-ui/react"
-// import { Button, ButtonGroup } from "@chakra-ui/react"
-
 
 import { Button,Form,Image ,Row,Col} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -320,3 +312,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 const Container = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
 export default Container;
+

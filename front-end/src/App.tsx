@@ -1,3 +1,4 @@
+
 import { FC, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
@@ -26,12 +27,11 @@ import Section from "./components/pages/section";
 import Slideshow from "./components/pages/Slideshow";
 
 import AddBlogs from "./components/blogs/AddBlogs";
-
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
-
-import PostJobs from "../src/components/Jobs/postJobs";
+import CreateRoom from "./components/Webinar/CreateRoom";
+import Room from "./components/Webinar/Room";
 
 
 import firebase from "./firebase/config";
@@ -91,6 +91,7 @@ const App: FC = () => {
             )}
           />
 
+
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />
@@ -109,14 +110,15 @@ const App: FC = () => {
           <Route exact path="/viewJobs" component={ViewJobs} />
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
-          <Route path="/postJobs" component={PostJobs} />
-
           <Route exact path="/codingResources" component={CodingResources} />
 
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
           <Route path="/blogs/:id" children={<BlogDetails />} />
+
+        <Route path="/webinar" exact component={CreateRoom} />
+        <Route path="/webinar/room/:roomID" component={Room} />
         </Switch>
 
         <footer>
