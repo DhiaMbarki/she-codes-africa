@@ -1,3 +1,4 @@
+
 import { FC, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
@@ -89,15 +90,6 @@ const App: FC = () => {
               </>
             )}
           />
-
-
-
-
-
-
-
-
-
 
 
           <Route exact path="/addBlogs" component={AddBlogs} />
