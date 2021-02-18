@@ -69,10 +69,10 @@ const Room = (props) => {
           setPeers((users) => [...users, peer]);
         });
 
-        socketRef.current.on("receiving returned signal", payload => {
-          const item = peersRef.current.find(p => p.peerID === payload.id);
+        socketRef.current.on("receiving returned signal", (payload) => {
+          const item = peersRef.current.find((p) => p.peerID === payload.id);
           item.peer.signal(payload.signal);
-      });
+        });
       });
   }, []);
 
