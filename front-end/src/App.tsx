@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 //IMPORTING ALL THE COMPONENTS
 import Home from "./components/pages/home";
 import Donate from "./components/pages/donate";
-import About from "./components/pages/about";
+import About from "./components/pages/About/About";
 import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Events from "./components/events/events";
@@ -32,6 +32,15 @@ import postevent from  "./components/events/addEvents"
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
+import Education from "./components/pages/About/Education.js";
+import Sidebar from "./components/pages/About/Sidebar.js";
+import Interest from "./components/pages/About/Interest.js";
+import Slider from "./components/pages/About/Slider.js";
+import sliderItems from "./components/pages/About/sliderItems.js";
+
+
+  
+
 import PostJobs from "../src/components/Jobs/postJobs";
 import EditCompanyProfile from './components/companyProfile/EditCompanyProfile'
 import ViewCompanyProfile from './components/companyProfile/ViewCompanyProfile'
@@ -78,7 +87,7 @@ const App: FC = () => {
 
   return (
     <Router>
-      <div>
+      
         <NavigationBar />
         <Switch>
           <Route
@@ -95,10 +104,46 @@ const App: FC = () => {
             )}
           />
 
+          <Route
+
+            exact
+            path="/about"
+            render={() => (
+              <>
+              <div className="App">
+
+          <div className="side">
+            <nav className="navbar side navbar-expand-lg navbar-light p-0" >
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <Sidebar />
+              </div>
+            </nav>  
+          </div>
+            <div className="main">
+              <div>
+
+                 
+              </div>
+              <Slider items={sliderItems} />
+
+                 <About />
+                <Interest />
+                <Education />
+            </div>
+                  </div>
+
+              </>
+              
+            )}
+            
+          />
 
           <Route exact path="/addBlogs" component={AddBlogs} />
 
-          <Route path="/about" component={About} />
+          {/* <Route path="/about" component={About} /> */}
           <Route path="/donate" component={Donate} />
           <PublicRoute path="/signup" component={SignUp} exact />
           <PublicRoute path="/signin" component={SignIn} exact />
@@ -127,20 +172,8 @@ const App: FC = () => {
         <Route path="/webinar/room/:roomID" component={Room} />
         </Switch>
 
-        <footer>
-          <Typography variant="h6" align="center" gutterBottom>
-            Footer
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="textSecondary"
-            component="p"
-          >
-            Something here to give the footer a purpose!
-          </Typography>
-        </footer>
-      </div>
+       
+     
     </Router>
   );
 };
