@@ -1,35 +1,20 @@
 import React from "react";
-
-// import CameraIcon from '@material-ui/icons/PhotoCamera';
-
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-
-
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Redirect, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
-//////
+
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import {
   MDBRow,
-  MDBView,
-  MDBMask,
-  MDBCardBody,
-  MDBCard,
   MDBCol,
   MDBBtn,
-  MDBBox,
-  MDBCardImage,
-  MDBCardTitle,
-  MDBCardText,
-  MDBContainer,
+  MDBBox
 } from "mdbreact";
-/////
-// import BlogDetails from './blogDetail'
+
 
 function Copyright() {
   return (
@@ -65,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   cardMedia: {
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%",
   },
   cardContent: {
     flexGrow: 1,
@@ -140,7 +125,7 @@ var dummy = [
 ];
 
 export default function ViewJobs() {
-  //const classes = useStyles(dummy);
+ 
 
   const readArticle = (e) => {
     console.log(e);
@@ -180,30 +165,4 @@ export default function ViewJobs() {
       ))}
     </div>
   );
-}
-
-{
-  /* <div style={{ padding: "50px" }}>
-<div className="list-group" style={{ margin: "20px 100px" }}>
-  <div className="list-group-item list-group-item-action flex-column align-items-start">
-    <div className="d-flex w-100 justify-content-between">
-      <MDBBox display="flex" alignSelf="center">
-        <p className="font-weight-normal">0000</p>
-      </MDBBox>
-      <small>0000</small>
-    </div>
-
-    <p className="font-weight-light">0000</p>
-    <MDBBox display="flex" alignSelf="center">
-      <p className="font-weight-normal">Status : /</p>
-    </MDBBox>
-    <MDBBox display="flex" alignSelf="start">
-      <p className="font-weight-normal">
-        Adress : via webinar or physical location.
-      </p>
-    </MDBBox>
-    <MDBBtn color="primary">I am interested</MDBBtn>
-  </div>
-</div>
-</div> */
 }

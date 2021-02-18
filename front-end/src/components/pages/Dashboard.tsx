@@ -1,28 +1,32 @@
-import React, { FC, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { FC, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import Message from '../UI/Message';
-import { setSuccess } from '../../redux/actions/authActions';
-import { RootState } from '../../redux/index';
+import Message from "../UI/Message";
+import { setSuccess } from "../../redux/actions/authActions";
+import { RootState } from "../../redux/index";
 
 const Dashboard: FC = () => {
-  const { user, needVerification, success } = useSelector((state: RootState) => state.auth);
+  const { user, needVerification, success } = useSelector(
+    (state: RootState) => state.auth
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(success) {
-      dispatch(setSuccess(''));
+    if (success) {
+      dispatch(setSuccess(""));
     }
   }, [success, dispatch]);
 
-  return(
+  return (
     <section className="section">
       <div className="container">
-        {needVerification && <Message type="success" msg="Please verify your email address." />}
+        {needVerification && (
+          <Message type="success" msg="Please verify your email address." />
+        )}
         <h1 className="is-size-1">Welcome {user?.firstName}</h1>
       </div>
     </section>
   );
-}
+};
 
 export default Dashboard;

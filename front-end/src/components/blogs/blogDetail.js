@@ -17,8 +17,6 @@ import {
 import { useSelector } from "react-redux";
 
 function BlogDetails() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
   let { id } = useParams();
   const [active, setActive] = useState(false);
   const blog = useSelector((state) => {
@@ -74,8 +72,6 @@ function BlogDetails() {
             </LinkedinShareButton>
           </footer>
           <div style={{ paddingTop: "20px" }}>
-            {/* <p className="text-justify"><MDBIcon far icon="heart" size="2x" className="indigo-text pr-3 " onClick={()=>{console.log('clicked')}} />I like this article</p> */}
-
             <p style={{ paddingLeft: "5px" }}>I like this article</p>
 
             <div style={{ width: "2rem" }}>

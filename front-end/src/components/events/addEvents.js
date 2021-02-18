@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createEvent } from '../../redux/actions/eventAction';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { createEvent } from "../../redux/actions/eventAction";
+import { Button,Form} from "react-bootstrap";
 
 class PostEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Title: '',
-      Date: '',
-      Time:'',
-      Image:'',
-      Status:'',
-      About:''
+      Title: "",
+      Date: "",
+      Time: "",
+      Image: "",
+      Status: "",
+      About: "",
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.fileSelecHandler=this.fileSelecHandler.bind(this);
   }
 
   onChange(e) {
@@ -27,35 +29,53 @@ class PostEvent extends Component {
     e.preventDefault();
 
     const event = {
+      Image: this.state.Image,
       Title: this.state.Title,
       Date: this.state.Date,
       Time: this.state.Time,
-      Image: this.state.Image,
       Status: this.state.Status,
-      About: this.state.About
+      About: this.state.About,
     };
 
     this.props.createEvent(event);
   }
+  fileSelecHandler(event) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        this.setState({ Image: reader.result });
+      }
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
 
   render() {
     return (
       <div>
         <h1>Add Event</h1>
-        <form onSubmit={this.onSubmit}>
+        <Form onSubmit={this.onSubmit}>
+        <img
+            borderRadius="full"
+            width="200" height="250"
+            src={this.state.Image}
+            alt="My Event  Image"
+          />
+        <Form.Group >
+           <Form.File id="exampleFormControlFile1"  onChange={this.fileSelecHandler} />
+           </Form.Group>
           <div>
-
             <label>Title: </label>
             <br />
             <input
               type="text"
-              name="title"
+              name="Title"
               onChange={this.onChange}
               value={this.state.Title}
             />
           </div>
           <br />
-          
+
           <div>
             <label>Date: </label>
             <br />
@@ -100,15 +120,15 @@ class PostEvent extends Component {
             />
           </div>
 
-          <button type="submit">Submit</button>
-        </form>
+          <Button type="submit">Submit</Button>
+        </Form>
       </div>
     );
   }
 }
 
 PostEvent.propTypes = {
-  createEvent: PropTypes.func.isRequired
+  createEvent: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createEvent })(PostEvent);
+export default connect(null,  {createEvent})(PostEvent);

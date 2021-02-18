@@ -9,9 +9,9 @@ import About from "./components/pages/about";
 import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Events from "./components/events/events";
-import Blogs from "./components/blogs/blogs";
+import Blogs from "./components/blogs/Blogs";
 import EditProfile from "./components/profile/EditProfile";
-import ViewProfile from "./components/profile/ViewProfile";
+import Viewprofile from "./components/profile/ViewProfile";
 import BlogDetails from "./components/blogs/blogDetail";
 import EventDetails from "./components/events/eventDetail";
 import NavigationBar from "./components/pages/navigation";
@@ -20,10 +20,21 @@ import Dashboard from "./components/pages/Dashboard";
 import PrivateRoute from "./components/auth/privateRoute";
 import PublicRoute from "./components/auth/PublickRoute";
 import Loader from "./components/UI/Loader";
+import NavHome from "./components/pages/NavHome";
+import HeaderHome from "./components/pages/HeaderHome";
+import Section from "./components/pages/section";
+import Slideshow from "./components/pages/Slideshow";
 
-import ViewJobs  from './components/Jobs/viewJobs'
-import JOBDetails  from './components/Jobs/jobDetail'
-import CodingResources from './components/codingResources/codingResources'
+import AddBlogs from "./components/blogs/AddBlogs";
+
+import ViewJobs from "./components/Jobs/viewJobs";
+import JOBDetails from "./components/Jobs/jobDetail";
+import CodingResources from "./components/codingResources/codingResources";
+
+import PostJobs from "../src/components/Jobs/postJobs";
+import EditCompanyProfile from './components/companyProfile/EditCompanyProfile'
+import ViewCompanyProfile from './components/companyProfile/ViewCompanyProfile'
+
 
 
 import firebase from "./firebase/config";
@@ -69,7 +80,22 @@ const App: FC = () => {
       <div>
         <NavigationBar />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <NavHome></NavHome>
+                <HeaderHome></HeaderHome>
+                <Section></Section>
+                <Home></Home>
+                <Slideshow></Slideshow>
+              </>
+            )}
+          />
+
+          <Route exact path="/addBlogs" component={AddBlogs} />
+
           <Route path="/about" component={About} />
           <Route path="/donate" component={Donate} />
           <PublicRoute path="/signup" component={SignUp} exact />
@@ -80,14 +106,18 @@ const App: FC = () => {
             exact
           />
           <PrivateRoute path="/dashboard" component={Dashboard} exact />
-          <Route exact path="/viewprofile" component={ViewProfile} />
+          <Route exact path="/viewprofile" component={Viewprofile} />
           <Route exact path="/editProfile" component={EditProfile} />
 
           <Route exact path="/viewJobs" component={ViewJobs} />
-          <Route path="/viewJobs/:id" children={<JOBDetails/>} />
+          <Route path="/viewJobs/:id" children={<JOBDetails />} />
+
+          <Route path="/postJobs" component={PostJobs} />
+
+          <Route path="/editCompanyProfile" component={EditCompanyProfile} />
+          <Route path="/viewCompanyProfile" component={ViewCompanyProfile} />
 
           <Route exact path="/codingResources" component={CodingResources} />
-
 
           <Route exact path="/events" component={Events} />
           <Route path="/events/:id" children={<EventDetails />} />

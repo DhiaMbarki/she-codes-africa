@@ -20,26 +20,26 @@ class CompanyBoard extends Component {
           <LinkContainer to="/events">
             <Nav.Link>Upcoming events</Nav.Link>
           </LinkContainer>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <LinkContainer to="/viewprofile">
+          <NavDropdown title="Company Profile" id="collasible-nav-dropdown" menuAlign="left">
+            <LinkContainer to="/viewCompanyProfile">
               <NavDropdown.Item>View profile</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/editProfile">
+            <LinkContainer to="/editCompanyProfile">
               <NavDropdown.Item>Edit profile</NavDropdown.Item>
             </LinkContainer>
             {
-              <LinkContainer to="/viewJobs">
+              <LinkContainer to="/postJobs">
                 <NavDropdown.Item>Post job</NavDropdown.Item>
               </LinkContainer>
             }
             <LinkContainer to="/codingResources">
               <NavDropdown.Item>Coding Resources</NavDropdown.Item>
             </LinkContainer>
-            <LinkContainer to="/">
+            <LinkContainer to="/webinar">
               <NavDropdown.Item>Webinar</NavDropdown.Item>
             </LinkContainer>
             <LinkContainer to="/">
-            <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
+              <NavDropdown.Item onClick={signout}>Logout</NavDropdown.Item>
             </LinkContainer>
           </NavDropdown>
         </Nav>

@@ -1,27 +1,10 @@
-import { React, useState } from "react";
-import Heart from "react-heart";
-
+import { React} from "react";
 import { useParams } from "react-router-dom";
-
-import { MDBContainer } from "mdbreact";
-
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-  TwitterShareButton,
-  TwitterIcon,
-} from "react-share";
-
 import fakeEvents from "./fakeEvents";
 import { MDBBox, MDBBtn } from "mdbreact";
 
 function EventDetails() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
   let { id } = useParams();
-  const [active, setActive] = useState(false);
 
   return (
     <div style={{ padding: "50px" }}>
