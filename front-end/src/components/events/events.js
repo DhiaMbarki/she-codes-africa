@@ -12,7 +12,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { fetchEvent } from "../../redux/actions/eventAction";
+import { useEffect , useState } from "react";
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -45,15 +48,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Events() {
+ function Events(props) {
+
+    const  Events= props.newstate.events.fetchedevents
+   useEffect(() => {
+     if (props.newstate.events.fetchedevents.length !== 0) {
+       props.newstate.events.fetchedevents = [];
+       props.fetchEvent();
+     }else {
+        (props.fetchEvent())
+      }
+    
+  }, []);
 
   const events = useSelector((state) => {return state.events.events})
-  console.log(events)
-
   const classes = useStyles(events);
-
-  const readArticle = (e) => {
-    console.log(e);
+  const readArticle = (index) => {
+    localStorage.setItem('index',index+1)
   };
 
   return (
@@ -88,13 +99,13 @@ export default function Events() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {events.map((card, index) => (
+            {Events.map((card, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://www.avarievents.com/wp-content/uploads/2019/07/1-3-1080x450.jpg"
-                    title={card.Title}
+                    image={card.Image}//"https://www.avarievents.com/wp-content/uploads/2019/07/1-3-1080x450.jpg"
+                    title= ""//{//card[0]};
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -103,7 +114,7 @@ export default function Events() {
                     <Typography>{card.About}</Typography>
                   </CardContent>
                   <CardActions>
-                    <Link to={`/events/${index}`}>
+                    <Link to={`/events/${index+1}`}>
                       <Button
                         size="small"
                         color="primary"
@@ -122,3 +133,12 @@ export default function Events() {
     </React.Fragment>
   );
 }
+const mapStateToProps = (state) => {
+  return { newstate: state };
+};
+Events.propTypes = {
+  fetchEvent: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps,  {fetchEvent})(Events);
+

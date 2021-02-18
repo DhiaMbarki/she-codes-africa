@@ -20,7 +20,7 @@ class AdminBoard extends Component {
         <LinkContainer to="/events">
           <Nav.Link>Upcoming events</Nav.Link>
         </LinkContainer>
-        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+        <NavDropdown title="Admin Profile" id="collasible-nav-dropdown">
           <LinkContainer to="/addAdmin">
             <NavDropdown.Item>Add Admin</NavDropdown.Item>
           </LinkContainer>
