@@ -45,7 +45,23 @@ const Room = (props) => {
     socketRef.current = io.connect("/webinar");
     navigator.mediaDevices
       .getUserMedia({ video: videoConstraints, audio: true })
-      .then((stream) => {});
+      .then((stream) => {
+        userVideo.current.srcObject = stream;
+        socketRef.current.emit("join room", roomID);
+        socketRef.current.on("all users", users => {
+          const peers = [];
+          users.forEach(userID => {
+            const peer = createPeer(userID, socketRef.current.id, stream);
+            peersRef.current.push({
+              peerID: userID,
+              peer,
+          });
+          peers.push(peer);
+          });
+          setPeers(peers);
+        });
+        
+      });
   }, []);
 
   function createPeer(userToSignal, callerID, stream) {}
