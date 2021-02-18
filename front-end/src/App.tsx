@@ -1,3 +1,4 @@
+
 import { FC, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
@@ -26,16 +27,14 @@ import Section from "./components/pages/section";
 import Slideshow from "./components/pages/Slideshow";
 
 import AddBlogs from "./components/blogs/AddBlogs";
-
 import ViewJobs from "./components/Jobs/viewJobs";
 import JOBDetails from "./components/Jobs/jobDetail";
 import CodingResources from "./components/codingResources/codingResources";
-
 import PostJobs from "../src/components/Jobs/postJobs";
 import EditCompanyProfile from './components/companyProfile/EditCompanyProfile'
 import ViewCompanyProfile from './components/companyProfile/ViewCompanyProfile'
-
-
+import CreateRoom from "./components/Webinar/CreateRoom";
+import Room from "./components/Webinar/Room";
 
 import firebase from "./firebase/config";
 import {
@@ -94,6 +93,7 @@ const App: FC = () => {
             )}
           />
 
+
           <Route exact path="/addBlogs" component={AddBlogs} />
 
           <Route path="/about" component={About} />
@@ -112,10 +112,12 @@ const App: FC = () => {
           <Route exact path="/viewJobs" component={ViewJobs} />
           <Route path="/viewJobs/:id" children={<JOBDetails />} />
 
+
           <Route path="/postJobs" component={PostJobs} />
 
           <Route path="/editCompanyProfile" component={EditCompanyProfile} />
           <Route path="/viewCompanyProfile" component={ViewCompanyProfile} />
+
 
           <Route exact path="/codingResources" component={CodingResources} />
 
@@ -123,6 +125,9 @@ const App: FC = () => {
           <Route path="/events/:id" children={<EventDetails />} />
           <Route exact path="/blogs" component={Blogs} />
           <Route path="/blogs/:id" children={<BlogDetails />} />
+
+        <Route path="/webinar" exact component={CreateRoom} />
+        <Route path="/webinar/room/:roomID" component={Room} />
         </Switch>
 
         <footer>

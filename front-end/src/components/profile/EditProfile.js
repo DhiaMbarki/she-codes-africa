@@ -1,10 +1,8 @@
+
 import React from "react";
 import { Component } from "react";
-
-
 import { Button,Form,Image ,Row,Col} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import $ from "jquery";
 import { connect } from "react-redux";
 import addprofileaction from "../../redux/actions/editProfileAction";
@@ -312,3 +310,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 const Container = connect(mapStateToProps, mapDispatchToProps)(EditProfile);
 export default Container;
+

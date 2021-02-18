@@ -1,3 +1,4 @@
+
 import { Component } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
@@ -55,3 +56,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = { signout };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CompanyBoard);
+
