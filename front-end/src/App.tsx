@@ -24,7 +24,7 @@ import Loader from "./components/UI/Loader";
 import NavHome from "./components/pages/NavHome";
 import HeaderHome from "./components/pages/HeaderHome";
 import Section from "./components/pages/section";
-import Slideshow from "./components/pages/Slideshow";
+// import Slideshow from "./components/pages/Slideshow";
 import addcodingresource  from "./components/codingResources/addCodingressource"
 import AddBlogs from "./components/blogs/AddBlogs";
 import postevent from  "./components/events/addEvents"
@@ -99,7 +99,7 @@ const App: FC = () => {
                 <HeaderHome></HeaderHome>
                 <Section></Section>
                 <Home></Home>
-                <Slideshow></Slideshow>
+                {/* <Slideshow></Slideshow> */}
               </>
             )}
           />
@@ -127,9 +127,10 @@ const App: FC = () => {
 
                  
               </div>
-              <Slider items={sliderItems} />
 
                  <About />
+                 <Slider items={sliderItems} />
+
                 <Interest />
                 <Education />
             </div>

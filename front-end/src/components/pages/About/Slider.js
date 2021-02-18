@@ -23,6 +23,8 @@ class Slider extends React.Component {
   }
 
 
+
+  
   render() {
     const { currentIndex, items } = this.state;
     const sliderContent = items.map((item, index) => {

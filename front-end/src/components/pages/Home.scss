@@ -3,8 +3,8 @@
 *:after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  z-index: 3;
+  padding: 0;  
+  
 
 }
 
@@ -12,6 +12,7 @@ body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   background: #000;
   background: #fafafa url(../HomeImage/Author_BG.jpg) center right no-repeat;
+  
 }
 
 $numOfParts: 4;
@@ -26,6 +27,8 @@ $letterStagger: 0.1s;
   position: relative;
   height: 60vh;
   color: #fff;
+  margin-top: -10rem;
+    z-index: 4;
 
   @mixin sliderReady {
     .slider.s--ready & {
@@ -56,6 +59,7 @@ $letterStagger: 0.1s;
   &__slides {
     position: relative;
     height: 100%;
+    
   }
 
   &__slide {
@@ -240,7 +244,7 @@ $letterStagger: 0.1s;
           opacity: 0;
         }
 
-       @for $i from 1 through $numOfParts {
+        @for $i from 1 through $numOfParts {
           #{$partRef}:nth-child(#{$i}) & {
             $delayOut: ($numOfParts - $i) * $stagger;
             $delayIn: $i * $stagger + $animTime/5;
@@ -262,7 +266,7 @@ $letterStagger: 0.1s;
               }
             }
           }
-        } 
+        }
 
         @include slideActive {
           transform: translateX(0);

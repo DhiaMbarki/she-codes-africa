@@ -8,6 +8,7 @@
   min-height: 60vh;
   margin: 0 auto;
   z-index: 1;
+  
 }
 
 #welcome-section::before {
@@ -20,6 +21,7 @@
   z-index: -1;
   opacity: 0;
   animation: stars-move-in 1000ms 300ms forwards;
+  
 }
 
 @keyframes stars-move-in {

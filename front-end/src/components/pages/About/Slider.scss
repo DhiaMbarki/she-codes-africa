@@ -23,8 +23,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  min-height: 270px;
-  height: 67vh;
+  min-height: 290px;
+  height: 50vh;
 }
 
 .slider__panel {
@@ -33,7 +33,7 @@ body {
   min-width: 270px;
   min-height: 270px;
   height: inherit;
-  padding: 90px;
+  padding: 50px;
 
   &.slider__panel__controls {
     background-color: $colorLight;

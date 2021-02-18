@@ -4,7 +4,9 @@
 }
 .About {
   margin-left: 20px;
-  padding: 20px;
+  padding: 1px;
+  margin-top: 20px;
+
 }
 
 .br {
@@ -22,7 +24,7 @@
 }
 
 .heading {
-  padding: 0px 500px;
+  padding: 20px 400px;
   font-size: 18px;
   font-weight: 700;
   margin-left: 30px;
