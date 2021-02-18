@@ -33,7 +33,11 @@ import CodingResources from "./components/codingResources/codingResources";
 import Education from "./components/pages/About/Education.js";
 import Sidebar from "./components/pages/About/Sidebar.js";
 import Interest from "./components/pages/About/Interest.js";
+import Slider from "./components/pages/About/Slider.js";
+import sliderItems from "./components/pages/About/sliderItems.js";
 
+
+  
 
 
 import firebase from "./firebase/config";
@@ -116,7 +120,8 @@ const App: FC = () => {
 
                  
               </div>
-              
+              <Slider items={sliderItems} />
+
                  <About />
                 <Interest />
                 <Education />

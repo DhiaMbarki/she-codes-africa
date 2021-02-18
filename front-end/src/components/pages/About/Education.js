@@ -23,7 +23,7 @@ class Education extends Component {
                                                     <FaSchool />     
                                                 </div>
                                                 <div className={classes.label}>
-                                                <h2 >Higher Education  <span>2014-2016</span></h2>
+                                                <h2 >Higher Education  <span>2020-2021</span></h2>
                                                 <p>I have completed my higher education from ............. </p>
                                                 </div>
                                             </article>
@@ -34,7 +34,7 @@ class Education extends Component {
                                                 <MdSchool />
                                                 </div>
                                                 <div className={classes.label}>
-                                                <h2 >Schcolorship <span>2017-Present</span></h2>
+                                                <h2 >Schcolorship <span>2021-Present</span></h2>
                                                 <p>here you can right somthing...................  </p>
                                                 </div>
                                             </article>
