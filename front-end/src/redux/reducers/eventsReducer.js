@@ -24,3 +24,4 @@ const eventReducer = (state = initState, action) => {
 };
 
 export default eventReducer;
+

@@ -166,3 +166,4 @@ PostEvent.propTypes = {
 };
 
 export default connect(null, { createEvent })(PostEvent);
+

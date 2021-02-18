@@ -142,3 +142,4 @@ Events.propTypes = {
 
 export default connect(mapStateToProps,  {fetchEvent})(Events);
 
+

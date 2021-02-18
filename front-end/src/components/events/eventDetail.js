@@ -4,11 +4,6 @@ import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 import $ from "jquery";
 
-
-
-
-
-
 function EventDetails(props) {
   const id = localStorage.getItem("index");
   const [Eventtargeted, setEventtargeted] = useState("");
@@ -55,3 +50,4 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(EventDetails);
+
