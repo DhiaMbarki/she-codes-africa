@@ -60,11 +60,29 @@ const Room = (props) => {
           });
           setPeers(peers);
         });
-        
+        socketRef.current.on("user joined", payload => {
+          const peer = addPeer(payload.signal , payload.callerID ,stream);
+          peersRef.current.push({
+            peerID: payload.callerID,
+            peer,
+          });
+          setPeers(users => [...users,peer])
+      });
       });
   }, []);
 
-  function createPeer(userToSignal, callerID, stream) {}
+  function createPeer(userToSignal, callerID, stream) {
+    const peer = new Peer({
+      initiator: true,
+      trickle: false,
+      stream,
+  });
+
+  peer.on("signal", signal => {
+    socketRef.current.emit("sending signal", { userToSignal, callerID, signal })
+})
+
+  }
 
   function addPeer(incomingSignal, callerID, stream) {}
 
