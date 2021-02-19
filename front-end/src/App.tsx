@@ -37,6 +37,7 @@ import Sidebar from "./components/pages/About/Sidebar.js";
 import Interest from "./components/pages/About/Interest.js";
 import Slider from "./components/pages/About/Slider.js";
 import sliderItems from "./components/pages/About/sliderItems.js";
+import Form from "./components/pages/Form";
 
 
   
@@ -56,6 +57,10 @@ import {
 import { RootState } from "./redux/index";
 
 import "./App.css";
+
+
+
+
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -99,6 +104,7 @@ const App: FC = () => {
                 <HeaderHome></HeaderHome>
                 <Section></Section>
                 <Home></Home>
+                <Form></Form>
                 {/* <Slideshow></Slideshow> */}
               </>
             )}
