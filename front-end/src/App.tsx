@@ -37,7 +37,6 @@ import Sidebar from "./components/pages/About/Sidebar.js";
 import Interest from "./components/pages/About/Interest.js";
 import Slider from "./components/pages/About/Slider.js";
 import sliderItems from "./components/pages/About/sliderItems.js";
-import Form from "./components/pages/Form";
 
 
   
@@ -104,7 +103,6 @@ const App: FC = () => {
                 <HeaderHome></HeaderHome>
                 <Section></Section>
                 <Home></Home>
-                <Form></Form>
                 {/* <Slideshow></Slideshow> */}
               </>
             )}
