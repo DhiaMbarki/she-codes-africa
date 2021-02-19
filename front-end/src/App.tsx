@@ -99,7 +99,7 @@ const App: FC = () => {
             path="/"
             render={() => (
               <>
-                <NavHome></NavHome>
+                {/* <NavHome></NavHome> */}
                 <HeaderHome></HeaderHome>
                 <Section></Section>
                 <Home></Home>
